@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Алтай · 12–18 августа 2026 — маршрут, погода и одежда</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
 :root{
   --bg:#f3f0e8; --paper:#fffdf8; --ink:#182019; --muted:#687067;
@@ -116,13 +117,22 @@ tr:last-child td{border-bottom:0}
   .hero{padding:30px 0}.hero:after{display:none}
   section{padding:28px 0}.day{break-inside:avoid}
   a{text-decoration:none}.print-note{display:block}
+  .view-tabs-bar{display:none}
 }
 
-.view-switch{margin-top:28px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.switcher{display:inline-flex;gap:6px;padding:6px;border-radius:999px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18)}
-.switcher button{appearance:none;border:0;background:transparent;color:rgba(255,255,255,.82);padding:9px 14px;border-radius:999px;font-size:14px;font-weight:760;cursor:pointer}
-.switcher button.active{background:white;color:#183c2e;box-shadow:0 4px 20px rgba(0,0,0,.12)}
-.switch-caption{font-size:13px;color:rgba(255,255,255,.75)}
+.view-tabs-bar{background:var(--bg);border-bottom:1px solid rgba(115,123,112,.12)}
+.view-switch{overflow-x:auto;padding-top:24px;scrollbar-width:none}
+.view-switch::-webkit-scrollbar{display:none}
+.switcher{display:flex;align-items:flex-end;gap:30px;min-width:max-content;border-bottom:2px solid #dbdbd9}
+.switcher button{appearance:none;border:0;border-bottom:4px solid transparent;background:transparent;color:#757575;margin-bottom:-2px;padding:0 10px 22px 0;font:inherit;font-size:clamp(18px,2vw,24px);font-weight:800;line-height:1.12;cursor:pointer;white-space:nowrap;transition:color .18s ease,border-color .18s ease}
+.switcher button:hover{color:#3f473f}
+.switcher button:focus-visible{outline:3px solid rgba(46,94,123,.32);outline-offset:5px;border-radius:4px}
+.switcher button.active{color:var(--ink);border-bottom-color:var(--ink)}
+@media(max-width:800px){
+  .view-switch{padding-top:20px}
+  .switcher{gap:10px}
+  .switcher button{font-size:14px;padding-right:4px;padding-bottom:18px}
+}
 .navgroup{display:none;gap:7px}
 .navgroup.active{display:flex}
 #notes-view{display:none}
@@ -189,17 +199,17 @@ body.view-notes #notes-view{display:block}
       <span class="chip">Главный принцип одежды: слои</span>
     </div>
     <div class="hero-note">⛅ Прогноз проверен на Яндекс Погоде 9 августа 2026 около 02:40 по местному времени Алтая</div>
-  
-    <div class="view-switch">
+  </div>
+</header>
+
+<div class="view-tabs-bar">
+  <div class="wrap view-switch">
       <div class="switcher" role="tablist" aria-label="Переключение между разделами путеводителя">
         <button id="tab-guide" class="active" type="button" role="tab" aria-selected="true">Маршрут, погода и одежда</button>
         <button id="tab-notes" type="button" role="tab" aria-selected="false">Полезные заметки</button>
       </div>
-      <div class="switch-caption">Структура основного путеводителя сохранена; практические детали вынесены в отдельную вкладку.</div>
-    </div>
-
   </div>
-</header>
+</div>
 
 <div class="navbar">
   <div class="wrap navinner" style="justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
