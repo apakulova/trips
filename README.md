@@ -4,4 +4,4 @@
 
 Сейчас опубликован путеводитель по Алтаю на 12–18 августа 2026 года.
 
-GitHub Pages: <https://apakulova.github.io/trips/>
+Путеводитель по Алтаю: <https://apakulova.github.io/trips/altai-2026/>
