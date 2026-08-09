@@ -1,0 +1,114 @@
+name: One-time Altai outfit table patch
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-altai-outfits-20260809.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Patch outfit table only
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          path = Path('altai-2026/index.html')
+          text = path.read_text(encoding='utf-8')
+
+          old_lead = 'Рабочая раскладка комплектов с учётом маршрута, температуры и слоёв. Это не финальный packing list: 13 августа верх ещё можно докрутить, а зелёно-коричневая рубашка на 17-е остаётся кандидатом на исключение из багажа.'
+          new_lead = 'Рабочая раскладка комплектов с учётом маршрута, температуры и слоёв. Повторы рубашек здесь намеренные: так багаж остаётся компактнее, а разные базовые слои помогают развести образы по дням.'
+          if old_lead not in text:
+              raise SystemExit('Expected outfits lead not found')
+          text = text.replace(old_lead, new_lead, 1)
+
+          def get_row(day, source):
+              m = re.search(r'(<tr>\s*<td><strong>' + re.escape(day) + r' авг</strong></td>.*?</tr>)', source, re.S)
+              if not m:
+                  raise SystemExit(f'Row {day} not found')
+              return m.group(1)
+
+          row12 = get_row('12', text)
+          row13 = get_row('13', text)
+          row14 = get_row('14', text)
+          row17 = get_row('17', text)
+
+          img12 = re.search(r'(<img class="outfit-photo"[^>]*src="[^"]+"[^>]*>)', row12, re.S)
+          img14 = re.search(r'(<img class="outfit-photo"[^>]*src="[^"]+"[^>]*>)', row14, re.S)
+          if not img12 or not img14:
+              raise SystemExit('Reference outfit image not found')
+
+          new13 = row13
+          new13 = re.sub(
+              r'<div class="outfit-main">.*?</div>(?:<div class="outfit-extra">.*?</div>)?',
+              '<div class="outfit-main">Коричневые льняные брюки + молочно-белая футболка + самая лёгкая зелёно-сине-белая клетчатая рубашка</div>',
+              new13, count=1, flags=re.S
+          )
+          new13 = new13.replace(
+              '<div class="outfit-note">Самая лёгкая рубашка как запасной слой + дождевик</div>',
+              '<div class="outfit-note">Дождевик; рубашку можно снять в жару</div>', 1
+          )
+          new13 = re.sub(
+              r'<td><div class="no-photo">Фото этого комплекта пока нет</div></td>',
+              '<td>' + img12.group(1).replace('alt="Лёгкая клетчатая рубашка"', 'alt="Лёгкая клетчатая рубашка для Чемала"') + '</td>',
+              new13, count=1
+          )
+          new13 = new13.replace(
+              'Молочный и коричневый хорошо отделяются от бирюзовой воды и зелени. Плотный верх днём, вероятно, не понадобится.',
+              'Молочный и коричневый хорошо работают на фоне бирюзовой воды и зелени. Та же лёгкая рубашка, что 12-го, добавляет слой утром и легко снимается в жару.', 1
+          )
+          text = text.replace(row13, new13, 1)
+
+          row14 = get_row('14', text)
+          new14 = row14.replace(
+              'Чёрные брюки + асфальтовая футболка + бордово-серая клетчатая рубашка',
+              'Чёрные брюки + чёрный топ + бордово-серая клетчатая рубашка', 1
+          )
+          new14 = new14.replace(
+              'alt="Бордово-серая клетчатая рубашка с асфальтовой футболкой"',
+              'alt="Бордово-серая клетчатая рубашка"', 1
+          )
+          text = text.replace(row14, new14, 1)
+
+          row14_after = get_row('14', text)
+          img14_after = re.search(r'(<img class="outfit-photo"[^>]*src="[^"]+"[^>]*>)', row14_after, re.S)
+          if not img14_after:
+              raise SystemExit('Updated row 14 image not found')
+
+          row17 = get_row('17', text)
+          new17 = re.sub(
+              r'<div class="outfit-main">.*?</div>(?:<div class="outfit-extra">.*?</div>)?',
+              '<div class="outfit-main">Чёрные брюки + тёмно-серая однотонная футболка + бордово-серая клетчатая рубашка</div>',
+              row17, count=1, flags=re.S
+          )
+          new17 = re.sub(
+              r'<td><img class="outfit-photo"[^>]*></td>',
+              '<td>' + img14_after.group(1).replace('alt="Бордово-серая клетчатая рубашка"', 'alt="Бордово-серая клетчатая рубашка с тёмно-серой футболкой"') + '</td>',
+              new17, count=1, flags=re.S
+          )
+          new17 = re.sub(
+              r'<td><div class="outfit-note">По температуре подходит, но не уникальна:.*?</div></td>',
+              '<td><div class="outfit-note">Повтор рубашки с 14-го, но с другой базой: тёмно-серая футболка делает комплект спокойнее и визуально отличает его от образа на Чуйском тракте.</div></td>',
+              new17, count=1, flags=re.S
+          )
+          text = text.replace(row17, new17, 1)
+
+          path.write_text(text, encoding='utf-8')
+
+      - name: Commit point edits and remove one-time workflow
+        shell: bash
+        run: |
+          git config user.name "ChatGPT travel guide updater"
+          git config user.email "actions@users.noreply.github.com"
+          git rm .github/workflows/update-altai-outfits-20260809.yml
+          git add altai-2026/index.html
+          git commit -m "Update Altai outfit table"
+          git push origin main
