@@ -1,0 +1,63 @@
+name: Patch Altai outfit photos
+
+on:
+  push:
+    paths:
+      - '.github/workflows/patch-altai-outfit.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Apply only the requested point edits
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          path = Path('altai-2026/index.html')
+          text = path.read_text(encoding='utf-8')
+
+          # 1) Keep the 12 Aug photo fully visible instead of cropping it.
+          photo_pattern = re.compile(
+              r'<img class="outfit-photo" src="(?P<src>data:image/jpeg;base64,[^"]+)" alt="Лёгкая клетчатая рубашка">'
+          )
+          match = photo_pattern.search(text)
+          if not match:
+              raise SystemExit('Expected 12 Aug outfit photo was not found; refusing to change anything.')
+
+          src = match.group('src')
+          old_photo_tag = match.group(0)
+          new_photo_tag = old_photo_tag.replace(
+              'class="outfit-photo"',
+              'class="outfit-photo" style="object-fit:contain"',
+              1,
+          )
+          text = text.replace(old_photo_tag, new_photo_tag, 1)
+
+          # 2) On 18 Aug, replace only the placeholder caption with the same road-outfit photo.
+          old_placeholder = '<td><div class="no-photo">Повтор дорожных вещей</div></td>'
+          if text.count(old_placeholder) != 1:
+              raise SystemExit('Expected exactly one 18 Aug placeholder; refusing to change anything.')
+
+          repeated_photo = (
+              '<td><img class="outfit-photo" style="object-fit:contain" '
+              f'src="{src}" alt="Дорожный комплект с лёгкой клетчатой рубашкой"></td>'
+          )
+          text = text.replace(old_placeholder, repeated_photo, 1)
+
+          path.write_text(text, encoding='utf-8')
+      - name: Commit point edits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add altai-2026/index.html
+          git diff --cached --check
+          git commit -m "Fix Altai outfit photo crop and repeat"
+          git push origin main
