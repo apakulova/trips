@@ -1,0 +1,5 @@
+/* Small visual corrections layered on top of the main stylesheet. */
+.flight{
+  border-top:0 !important;
+  border-bottom:0 !important;
+}

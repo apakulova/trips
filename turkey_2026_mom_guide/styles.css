@@ -1,0 +1,204 @@
+:root {
+  --bg:#fbf7f1;
+  --paper:#fffdf9;
+  --ink:#252329;
+  --muted:#716d75;
+  --fuchsia:#d91f68;
+  --fuchsia-soft:#fde7f0;
+  --green:#5f7d2c;
+  --green-soft:#eef4df;
+  --sand:#eadbc8;
+  --line:#eadfd4;
+  --shadow:0 14px 40px rgba(65,46,45,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(217,31,104,.08), transparent 32rem),
+    radial-gradient(circle at 100% 22%, rgba(95,125,44,.09), transparent 28rem),
+    var(--bg);
+  line-height:1.55;
+}
+a{color:inherit}
+p,.item,.checkrow{ text-wrap:pretty }
+h1,h2,h3{ text-wrap:balance }
+.page{max-width:1120px;margin:0 auto;padding:28px 22px 80px}
+.hero{
+  display:grid;grid-template-columns:1.08fr .92fr;gap:26px;align-items:stretch;
+  margin-bottom:28px;
+}
+.hero-copy{
+  background:var(--paper);border:1px solid var(--line);border-radius:34px;
+  padding:42px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.hero-copy:after{
+  content:"";position:absolute;width:220px;height:220px;border-radius:50%;
+  background:var(--fuchsia-soft);right:-90px;top:-80px;opacity:.75;
+}
+.kicker{display:inline-flex;gap:8px;align-items:center;color:var(--green);font-weight:750;letter-spacing:.02em}
+h1{font-size:clamp(42px,6vw,78px);line-height:.95;margin:14px 0 20px;font-family:Georgia,"Times New Roman",serif;letter-spacing:-.035em;position:relative;z-index:1}
+h1 em{font-style:italic;color:var(--fuchsia);font-weight:500}
+.lede{font-size:20px;max-width:680px;color:#4b474e;margin:0 0 26px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.hotel-chips{display:flex;gap:10px;flex-wrap:nowrap}
+.hotel-chips .chip{white-space:nowrap}
+.chip{padding:9px 13px;border-radius:999px;background:#f4efe8;border:1px solid var(--line);font-size:14px;font-weight:700}
+.chip.pink{background:var(--fuchsia-soft);border-color:#f9c5d8;color:#98244e}
+.chip.green{background:var(--green-soft);border-color:#dbe9b8;color:#4d671f}
+.hero-photo{
+  border-radius:34px;overflow:hidden;box-shadow:var(--shadow);min-height:460px;background:#ddd;
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.note{
+  margin:18px 0 0;padding:14px 16px;border-left:4px solid var(--fuchsia);
+  background:#fff6f9;border-radius:10px;color:#5d5158;font-size:15px;
+}
+.section{
+  margin-top:26px;background:var(--paper);border:1px solid var(--line);border-radius:28px;
+  padding:30px;box-shadow:0 8px 28px rgba(65,46,45,.06);
+}
+.section h2{font-family:Georgia,"Times New Roman",serif;font-size:34px;margin:0 0 8px;letter-spacing:-.02em}
+.section-intro{margin:0 0 22px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{border-radius:22px;padding:22px;border:1px solid var(--line);background:#fff}
+.card.pink{background:linear-gradient(180deg,#fff 0%,#fff8fb 100%);border-color:#f5c9d9}
+.card.green{background:linear-gradient(180deg,#fff 0%,#f9fbee 100%);border-color:#dfe8c8}
+.card.sand{background:linear-gradient(180deg,#fff 0%,#fbf7f0 100%)}
+.card h3{margin:0 0 10px;font-size:21px}
+.card p{margin:8px 0;color:#4d4950}
+.callout{font-size:15px;color:#6b6168;background:#f8f4ef;border-radius:14px;padding:12px 14px;margin-top:12px}
+.flight{
+  display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin-top:16px;
+  padding:18px 0;border-top:1px dashed #dfd4ca;border-bottom:1px dashed #dfd4ca;
+}
+.place strong{display:block;font-size:34px;line-height:1;color:var(--fuchsia);font-family:Georgia,"Times New Roman",serif}
+.place span{display:block;font-size:14px;color:var(--muted);margin-top:6px}
+.place.right{text-align:right}
+.arrow{font-size:26px;color:var(--green);padding:0 4px}
+.meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.meta span{font-size:13px;font-weight:700;border-radius:999px;padding:7px 10px;background:#f5f1ec}
+.alert{background:#fff4f7;border:1px solid #facadc;padding:16px;border-radius:16px;margin-top:16px}
+.alert strong{color:#a41d50}
+.list{display:grid;gap:9px;margin-top:12px}
+.item{display:flex;gap:10px;align-items:flex-start}
+.bullet{width:22px;height:22px;border-radius:50%;background:var(--fuchsia-soft);color:var(--fuchsia);display:inline-flex;align-items:center;justify-content:center;font-weight:800;flex:0 0 auto;margin-top:1px}
+.green .bullet{background:var(--green-soft);color:var(--green)}
+.checklist{display:grid;gap:10px;align-content:start}
+.checkrow{
+  display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:14px;
+  background:#fbf8f4;border:1px solid #eee3d9;
+}
+.checkrow input{width:19px;height:19px;margin-top:2px;accent-color:var(--fuchsia);flex:0 0 auto}
+.checkrow.checked{opacity:.55;text-decoration:line-through}
+.progress-wrap{display:flex;align-items:center;gap:12px;margin:18px 0 4px}
+.progress{height:10px;border-radius:99px;background:#eee5dd;overflow:hidden;flex:1}
+.progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--fuchsia),#ee7aa6);width:0;transition:.2s}
+.progress-label{font-size:13px;color:var(--muted);font-weight:700;min-width:72px;text-align:right}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+button,.button{
+  appearance:none;border:0;border-radius:999px;padding:10px 14px;font:inherit;font-weight:750;
+  background:var(--ink);color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+}
+button.secondary,.button.secondary{background:#f3ece6;color:var(--ink);border:1px solid #e5d8cd}
+.who{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:999px;margin-bottom:8px}
+.tag.you{background:var(--fuchsia-soft);color:#a51d50}
+.tag.me{background:var(--green-soft);color:#4f6b20}
+.money-big{font-size:32px;font-family:Georgia,"Times New Roman",serif;color:var(--green);margin:4px 0 8px}
+.money-lead{
+  font-size:30px;
+  line-height:1.15;
+  font-family:Georgia,"Times New Roman",serif;
+  margin:4px 0 12px;
+}
+.card.green .money-lead{color:var(--green)}
+.card.pink .money-lead{color:var(--fuchsia)}
+.details-shot{margin-top:16px}
+details{border:1px solid var(--line);border-radius:16px;padding:13px 15px;background:#fbf8f4}
+summary{cursor:pointer;font-weight:800}
+details img{width:100%;margin-top:14px;border-radius:14px;border:1px solid var(--line)}
+.quick{
+  margin-top:28px;background:linear-gradient(135deg,#272127,#3e2734);border-radius:30px;
+  padding:30px;box-shadow:var(--shadow);color:#fff;overflow:hidden;position:relative;
+}
+.quick:after{content:"";position:absolute;width:380px;height:380px;background:rgba(217,31,104,.22);border-radius:50%;right:-160px;top:-160px}
+.quick h2{font-family:Georgia,"Times New Roman",serif;font-size:38px;margin:0 0 8px;position:relative;z-index:1}
+.quick p{color:#e7dce2;position:relative;z-index:1}
+.quick-img{position:relative;z-index:1;margin-top:18px;border-radius:22px;overflow:hidden;background:#fff}
+.quick-img img{display:block;width:100%;height:auto}
+.quick-actions{position:relative;z-index:1}
+.download-button{
+  background:linear-gradient(135deg,#ff0f73,#ff5b9a);
+  color:#fff;
+  padding:14px 22px;
+  font-size:17px;
+  box-shadow:0 10px 24px rgba(255,15,115,.38);
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;
+}
+.download-button:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,15,115,.48);filter:saturate(1.12)}
+.download-button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.footer{text-align:center;color:#817a80;font-size:13px;margin-top:22px}
+.small{font-size:13px;color:var(--muted)}
+hr.soft{border:0;border-top:1px solid var(--line);margin:24px 0}
+@media (max-width:850px){
+  .hero,.grid,.grid.three,.who{grid-template-columns:1fr}
+  .hero-photo{min-height:360px;order:-1}
+  .hero-copy{padding:30px}
+  .section{padding:22px}
+}
+@media print{
+  body{background:white}
+  .page{max-width:none;padding:0}
+  .hero-copy,.section,.quick{box-shadow:none}
+  .btns,button,.button{display:none!important}
+  details{display:none}
+}
+@media (max-width:640px){
+  body{overflow-x:hidden;font-size:16px}
+  .page{padding:12px 10px 44px}
+  .hero{gap:12px;margin-bottom:16px}
+  .hero-photo{min-height:220px;max-height:280px;border-radius:22px}
+  .hero-copy{padding:22px 18px 20px;border-radius:22px}
+  .kicker{font-size:14px}
+  h1{font-size:40px;line-height:.98;margin:10px 0 14px}
+  .lede{font-size:16px;line-height:1.5;margin-bottom:18px}
+  .chips{gap:7px}
+  .hotel-chips{display:contents}
+  .chip{font-size:12px;padding:7px 10px}
+  .section{margin-top:14px;padding:18px 14px;border-radius:22px}
+  .section h2,.quick h2{font-size:29px;line-height:1.08}
+  .section-intro{font-size:15px;margin-bottom:16px}
+  .grid,.grid.three,.who{gap:12px}
+  .card{padding:17px 15px;border-radius:18px}
+  .card h3{font-size:19px;line-height:1.25}
+  .card p,.item{font-size:15px}
+  .callout,.alert{font-size:14px;line-height:1.5}
+  .flight{grid-template-columns:minmax(0,1fr) 30px minmax(0,1fr);gap:6px;padding:14px 0}
+  .place strong{font-size:29px}
+  .place span{font-size:12px}
+  .arrow{font-size:20px;padding:0;text-align:center}
+  .meta{gap:6px}
+  .meta span{font-size:11px;padding:6px 8px}
+  .money-big{font-size:29px}
+  .checkrow{padding:10px;font-size:14px}
+  .quick{margin-top:16px;padding:18px 12px;border-radius:22px}
+  .quick p{font-size:14px}
+  .quick-img{border-radius:16px}
+  .btns{gap:8px}
+  button,.button{width:100%;justify-content:center}
+  details{font-size:14px}
+}
+/* Flight card heading: small direction tag + one-line flight details */
+.flight-card-head{display:grid;gap:9px;margin-bottom:4px}
+.flight-tag{display:inline-flex;width:max-content;align-items:center;padding:6px 10px;border-radius:999px;background:var(--fuchsia-soft);color:#a51d50;font-size:13px;font-weight:800;line-height:1}
+.card.green .flight-tag{background:var(--green-soft);color:#4f6b20}
+.flight-details{font-size:18px;font-weight:800;line-height:1.25;white-space:nowrap}
+.hero-photo img{object-position:center 38%}
+@media (max-width:850px){.hero-photo{order:0;min-height:260px}.hero-copy{order:-1}}
+@media (max-width:640px){.flight-card-head{gap:7px}.flight-tag{font-size:12px;padding:5px 9px}.flight-details{font-size:15px;white-space:nowrap}.hero-photo{min-height:230px;max-height:280px}.hero-photo img{object-position:center 34%}}
+@media (max-width:390px){.flight-details{font-size:14px;letter-spacing:-.01em}}

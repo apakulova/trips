@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1528" viewBox="0 0 1080 1528">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffdf9"/><stop offset="1" stop-color="#fbf7f1"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe4f3"/><stop offset=".5" stop-color="#78bdd7"/><stop offset=".51" stop-color="#f4e4c5"/><stop offset="1" stop-color="#fff7ed"/></linearGradient>
+    <style>
+      .serif{font-family:Georgia,'Times New Roman',serif}.sans{font-family:Arial,Helvetica,sans-serif}.ink{fill:#252329}.muted{fill:#68636b}.pink{fill:#d91f68}.green{fill:#5f7d2c}.small{font-size:20px}.body{font-size:22px}.label{font-size:19px;font-weight:700}.cardtitle{font-size:34px;font-weight:700}.check{font-size:22px;font-weight:700}.flighttime{font-size:54px}.flightplace{font-size:20px;font-weight:700}
+    </style>
+  </defs>
+  <rect width="1080" height="1528" fill="url(#bg)"/>
+  <text x="42" y="78" class="serif pink" font-size="72" font-style="italic">Мама,</text>
+  <text x="42" y="150" class="serif ink" font-size="54" font-weight="700">вот памятка</text>
+  <text x="42" y="211" class="serif ink" font-size="54" font-weight="700">по Турции</text>
+  <g transform="translate(620 18)">
+    <rect x="0" y="0" width="418" height="228" rx="34" fill="url(#sea)" opacity=".98"/>
+    <circle cx="330" cy="48" r="36" fill="#ffd966" opacity=".95"/>
+    <path d="M0 126 L75 64 L132 113 L194 50 L257 116 L320 78 L418 132 L418 166 L0 166 Z" fill="#6f9480" opacity=".75"/>
+    <path d="M0 144 H418 V181 H0 Z" fill="#70b8d4" opacity=".9"/>
+    <path d="M0 178 H418 V228 H0 Z" fill="#f2dfbd"/>
+    <g fill="#d91f68"><circle cx="338" cy="18" r="15"/><circle cx="366" cy="23" r="13"/><circle cx="394" cy="14" r="15"/><circle cx="413" cy="38" r="12"/><circle cx="354" cy="50" r="12"/><circle cx="385" cy="55" r="15"/><circle cx="405" cy="72" r="11"/></g>
+    <g fill="#4f7a30"><ellipse cx="352" cy="34" rx="9" ry="18"/><ellipse cx="379" cy="37" rx="8" ry="17"/><ellipse cx="404" cy="31" rx="9" ry="18"/></g>
+  </g>
+  <text x="42" y="268" class="sans ink" font-size="21">📍 FUN&amp;SUN Smart Lurea Beach (бывший Larissa Sultan’s Beach), Чамьюва</text>
+  <text x="42" y="303" class="sans green" font-size="21" font-weight="700">5–13 сентября 2026</text>
+  <rect x="36" y="336" width="498" height="616" rx="28" fill="#fff8fb" stroke="#f3bfd2" stroke-width="2"/>
+  <text x="66" y="388" class="serif pink cardtitle">✈ Перелёт</text>
+  <rect x="58" y="414" width="454" height="42" rx="21" fill="#fde7f0"/>
+  <text x="75" y="442" class="sans ink label">Туда: 5 сентября 2026 · Azur Air · ZF 3007</text>
+  <text x="67" y="492" class="sans ink flightplace">Москва (VKO)</text>
+  <text x="68" y="550" class="serif pink flighttime">14:25</text>
+  <text x="418" y="492" text-anchor="end" class="sans ink flightplace">Анталья (AYT)</text>
+  <text x="465" y="550" text-anchor="end" class="serif pink flighttime">19:20</text>
+  <text x="266" y="532" text-anchor="middle" class="sans pink" font-size="31">→ ✈ →</text>
+  <text x="266" y="588" text-anchor="middle" class="sans ink body">◷  В пути: 4 ч 55 мин</text>
+  <text x="69" y="633" class="sans ink body">👜  Ручная кладь: 1×5 кг</text>
+  <text x="301" y="633" class="sans ink body">🧳  Багаж: 1×10 кг</text>
+  <circle cx="36" cy="679" r="20" fill="#fbf7f1" stroke="#f3bfd2" stroke-width="2"/>
+  <circle cx="534" cy="679" r="20" fill="#fbf7f1" stroke="#f3bfd2" stroke-width="2"/>
+  <line x1="56" y1="679" x2="514" y2="679" stroke="#cdbfc3" stroke-width="2" stroke-dasharray="8 9"/>
+  <rect x="58" y="700" width="454" height="42" rx="21" fill="#fde7f0"/>
+  <text x="75" y="728" class="sans ink" font-size="16.5" font-weight="700">Обратно: 13 сентября 2026 · Turkish Airlines · TK 3082</text>
+  <text x="67" y="780" class="sans ink flightplace">Анталья (AYT)</text>
+  <text x="68" y="838" class="serif pink flighttime">09:50</text>
+  <text x="418" y="780" text-anchor="end" class="sans ink flightplace">Москва (VKO)</text>
+  <text x="465" y="838" text-anchor="end" class="serif pink flighttime">14:30</text>
+  <text x="266" y="820" text-anchor="middle" class="sans pink" font-size="31">→ ✈ →</text>
+  <text x="266" y="876" text-anchor="middle" class="sans ink body">◷  В пути: 4 ч 40 мин</text>
+  <text x="69" y="921" class="sans ink body">👜  Ручная кладь: 1×8 кг</text>
+  <text x="301" y="921" class="sans ink body">🧳  Багаж: 1×20 кг</text>
+  <rect x="558" y="336" width="486" height="190" rx="28" fill="#fbfdf4" stroke="#dce7c0" stroke-width="2"/>
+  <text x="590" y="384" class="serif green cardtitle">Документы</text>
+  <text x="588" y="430" class="sans ink body">✓  Оба паспорта: российский и загран</text>
+  <text x="588" y="470" class="sans ink body">✓  Держать при себе, не сдавать в багаж</text>
+  <rect x="558" y="546" width="486" height="406" rx="28" fill="#fff8fb" stroke="#f3bfd2" stroke-width="2"/>
+  <text x="590" y="594" class="serif pink cardtitle">В ручную кладь</text>
+  <g class="sans ink body"><text x="590" y="640">✓  Ценные вещи, деньги, телефон, техника</text><text x="590" y="680">✓  Лекарства</text><text x="590" y="720">✓  1 комплект сменной одежды</text><text x="590" y="760">✓  Купальник и одежда для сна</text><text x="590" y="800">✓  Пустая бутылка 0,5 л</text><text x="590" y="840">✓  Жидкости — только до 100 мл</text><text x="590" y="880">✓  Мини-тюбики шампуня и геля для душа</text></g>
+  <rect x="36" y="978" width="324" height="376" rx="26" fill="#fbfdf4" stroke="#dce7c0" stroke-width="2"/>
+  <text x="62" y="1028" class="serif green" font-size="31" font-weight="700">Для моря и солнца</text>
+  <g class="sans ink" font-size="21"><text x="62" y="1072">✓  Пляжная сумка</text><text x="62" y="1110">✓  Полотенца — лучше по 2</text><text x="62" y="1148">✓  Аквашузы</text><text x="62" y="1186">✓  Крем от солнца</text><text x="62" y="1224">✓  Шляпы / панамы</text><text x="62" y="1262">✓  Солнцезащитные очки</text><text x="62" y="1300">✓  Лёгкая рубашка / накидка</text><text x="84" y="1330">чтобы закрывать плечи</text></g>
+  <rect x="378" y="978" width="310" height="376" rx="26" fill="#fff8fb" stroke="#f3bfd2" stroke-width="2"/>
+  <text x="402" y="1028" class="serif pink" font-size="31" font-weight="700">Одежда и отель</text>
+  <g class="sans ink" font-size="20"><text x="402" y="1074">✓  В ресторан и по территории</text><text x="424" y="1104">не ходят только в купальнике</text><text x="402" y="1150">✓  Нужны туника, накидка</text><text x="424" y="1180">или рубашка поверх</text><text x="402" y="1226">✓  Фуксия — по желанию:</text><text x="424" y="1256">красиво для фото</text><text x="424" y="1286">с бугенвиллией</text></g>
+  <rect x="706" y="978" width="338" height="154" rx="26" fill="#fbfdf4" stroke="#dce7c0" stroke-width="2"/>
+  <text x="730" y="1028" class="serif green" font-size="31" font-weight="700">Для номера</text>
+  <g class="sans ink" font-size="20"><text x="730" y="1070">✓  Прищепки</text><text x="730" y="1100">✓  Багажные весы</text></g>
+  <rect x="706" y="1150" width="338" height="204" rx="26" fill="#fff8fb" stroke="#f3bfd2" stroke-width="2"/>
+  <text x="730" y="1200" class="serif pink" font-size="31" font-weight="700">Деньги</text>
+  <g class="sans ink" font-size="19"><text x="730" y="1240">✓  Основное уже оплачено</text><text x="730" y="1272">✓  Российские карты не работают</text><text x="730" y="1304">✓  Рубли — по желанию</text><text x="730" y="1336">✓  Я беру иностранную карту</text></g>
+  <rect x="36" y="1378" width="1008" height="116" rx="26" fill="#fff8fb" stroke="#f3bfd2" stroke-width="2"/>
+  <text x="64" y="1425" class="serif pink" font-size="31" font-weight="700">В самолёте</text>
+  <text x="64" y="1460" class="sans ink" font-size="19">✓  Сразу достать телефон, наушники и воду · сумку убрать на полку или под сиденье</text>
+</svg>
