@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (list) {
       list.innerHTML = `
         <div class="item"><span class="bullet">✓</span><span>Сувениры и турецкие сладости на базаре — обязательно выделим время просто походить и посмотреть</span></div>
-        <div class="item"><span class="bullet">✓</span><span><strong>Хамам и массаж — по отзывам это стоит около $30 с человека</strong></span></div>
+        <div class="item"><span class="bullet">✓</span><span>Хамам и массаж — по отзывам это стоит около $30 с человека</span></div>
         <div class="item"><span class="bullet">✓</span><span>Какая-нибудь мелочь: крем, надувной круг и другое</span></div>
         <div class="item"><span class="bullet">✓</span><span>Экскурсии — это я беру на себя</span></div>
       `;
