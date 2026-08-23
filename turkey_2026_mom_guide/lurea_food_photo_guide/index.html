@@ -18,7 +18,6 @@ h2{font-size:clamp(32px,5vw,52px);line-height:1;margin:8px 0}
 h3{font-size:23px;line-height:1.1;margin:0 0 10px}
 .hero p,.section-head p,.muted{color:var(--muted)}
 .hero p{max-width:820px;margin:0;font-size:17px}
-.stat{display:inline-flex;margin-top:20px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff8;font-size:13px;font-weight:800}
 .nav-wrap{position:sticky;top:0;z-index:20;background:linear-gradient(var(--bg) 78%,#f6f1e900);padding:10px 0 22px}
 .nav{display:flex;gap:8px;overflow:auto;scrollbar-width:none;padding:0 20px;max-width:1180px;margin:auto}
 .nav::-webkit-scrollbar{display:none}
@@ -34,7 +33,7 @@ main{max-width:1180px;margin:auto;padding:0 20px 70px}
 .text{font-size:14px;color:#38332d;margin:0} .text+.text{margin-top:8px}
 .menu-list{margin:14px 0 0;padding-left:20px;display:grid;gap:9px}.menu-list li{padding-left:2px;color:#38332d;font-size:14px;line-height:1.45}.menu-list li::marker{color:var(--accent)}.menu-list strong{color:var(--ink)}
 .cocktail-guide{margin:10px 0 22px;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow)}
-.cocktail-guide-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:14px}.cocktail-guide-head h3{font-size:30px}.cocktail-guide-head p{max-width:650px;margin:0;color:var(--muted);font-size:14px}
+.cocktail-guide-head{margin-bottom:14px}.cocktail-guide-head h3{font-size:30px}
 .cocktail-table-wrap{overflow-x:auto}.cocktail-table{width:100%;min-width:940px;border-collapse:collapse}.cocktail-table th{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}.cocktail-table td{padding:13px 12px;border-bottom:1px solid #ebe4dc;vertical-align:middle;font-size:14px}.cocktail-table tr:last-child td{border-bottom:0}.cocktail-table th:first-child,.cocktail-table td:first-child{padding-left:0}.cocktail-table th:last-child,.cocktail-table td:last-child{padding-right:0}
 .cocktail-photo{width:70px;height:92px;border-radius:15px;background-image:url("assets/cocktail-guide-sprite.png");background-size:400% 200%;background-repeat:no-repeat;box-shadow:inset 0 0 0 1px #ffffff70,0 4px 14px #2a1f1320}.cocktail-photo.mojito{background-position:0 0}.cocktail-photo.pina{background-position:33.333% 0}.cocktail-photo.daiquiri{background-position:66.667% 0}.cocktail-photo.sangria{background-position:100% 0}.cocktail-photo.bloody{background-position:0 100%}.cocktail-photo.cosmo{background-position:33.333% 100%}.cocktail-photo.cuba{background-position:66.667% 100%}.cocktail-photo.margarita{background-position:100% 100%}
 .cocktail-name{font-size:16px;font-weight:850}.strength{white-space:nowrap}.try-note{font-weight:750}.alcohol-free{display:block;margin-top:5px;color:var(--green);font-size:12px;font-weight:850}
@@ -47,7 +46,7 @@ main{max-width:1180px;margin:auto;padding:0 20px 70px}
 .unconfirmed{border-color:#e4c7ae;background:#fffaf3}
 .footer{max-width:1180px;margin:auto;padding:0 20px 48px;color:var(--muted);font-size:13px}
 @media(max-width:850px){.box,.box.wide{grid-column:span 6}}
-@media(max-width:760px){.cocktail-guide{padding:16px;border-radius:18px}.cocktail-guide-head{display:block}.cocktail-guide-head h3{font-size:26px}.cocktail-guide-head p{margin-top:7px}.cocktail-table{min-width:0}.cocktail-table thead{display:none}.cocktail-table tbody{display:grid;gap:10px}.cocktail-table tr{display:grid;grid-template-columns:76px 1fr;background:#faf7f2;border:1px solid #e8dfd5;border-radius:16px;padding:12px}.cocktail-table td{display:block;border:0;padding:2px 0}.cocktail-table td:first-child{grid-row:1/5;padding:0}.cocktail-table td[data-label]::before{content:attr(data-label);display:block;margin:6px 0 1px;color:var(--muted);font-size:10px;font-weight:850;letter-spacing:.06em;text-transform:uppercase}.cocktail-photo{width:62px;height:82px}.strength{white-space:normal}}
+@media(max-width:760px){.cocktail-guide{padding:16px;border-radius:18px}.cocktail-guide-head h3{font-size:26px}.cocktail-table{min-width:0}.cocktail-table thead{display:none}.cocktail-table tbody{display:grid;gap:10px}.cocktail-table tr{display:grid;grid-template-columns:76px 1fr;background:#faf7f2;border:1px solid #e8dfd5;border-radius:16px;padding:12px}.cocktail-table td{display:block;border:0;padding:2px 0}.cocktail-table td:first-child{grid-row:1/5;padding:0}.cocktail-table td[data-label]::before{content:attr(data-label);display:block;margin:6px 0 1px;color:var(--muted);font-size:10px;font-weight:850;letter-spacing:.06em;text-transform:uppercase}.cocktail-photo{width:62px;height:82px}.strength{white-space:normal}}
 @media(max-width:620px){.hero{padding-top:34px}.hero p{font-size:15px}main{padding-left:12px;padding-right:12px}.nav{padding-left:12px;padding-right:12px}.section{padding-top:26px}.practical{grid-template-columns:1fr;gap:10px}.box,.box.wide,.box.full{grid-column:1}.box{padding:15px;border-radius:16px}.masonry{columns:1}.card{border-radius:16px;margin-bottom:14px}}
 </style>
 </head>
@@ -56,7 +55,6 @@ main{max-width:1180px;margin:auto;padding:0 20px 70px}
   <div class="kicker">FUN&amp;SUN Smart Lurea Beach · Чамьюва</div>
   <h1>Бары и рестораны</h1>
   <p>Практический гид по еде и напиткам в отеле: где завтракать, куда идти за перекусом, в каком баре брать коктейли и где спокойно посидеть вечером. В каждом разделе — часы работы, короткая подсказка и фотографии места.</p>
-  <div class="stat">8 мест · часы работы · меню · 30 фотографий</div>
 </header>
 <div class="nav-wrap"><nav class="nav">
   <a class="chip" href="#lobby">🍸 Лобби-бар</a>
@@ -75,8 +73,7 @@ main{max-width:1180px;margin:auto;padding:0 20px 70px}
   <div class="section-head"><h2>🍸 Лобби-бар</h2><p>Главный бар внутри отеля, рядом с ресепшеном. Сюда удобно зайти за напитком после ужина или посидеть вечером в прохладном лобби.</p></div>
 <div class="practical">
   <article class="box wide accent"><div class="label">Время работы</div><div class="big">10:00–24:00</div><p class="text">Открыт с утра до полуночи.</p></article>
-  <article class="box wide"><div class="label">Где искать</div><div class="big">У ресепшена</div><p class="text">Стойка находится в лобби, рядом с зоной ресепшена.</p></article>
-  <article class="box full green"><div class="label">Что брать</div><div class="big">Алкоголь, коктейли и газировку</div><p class="text">Красное, белое и розовое вино, игристое, пиво, крепкий алкоголь, Coca-Cola, Fanta, Sprite и коктейли.</p></article>
+  <article class="box wide green"><div class="label">Что брать</div><div class="big">Алкоголь, коктейли и газировку</div><p class="text">Красное, белое и розовое вино, игристое, пиво, крепкий алкоголь, Coca-Cola, Fanta, Sprite и коктейли.</p></article>
 </div>
   <div class="masonry">
     <figure class="card"><img src="assets/lobby-bar-02.png" alt="Коктейль и табличка Lobby Bar" loading="lazy" decoding="async"></figure>
@@ -194,7 +191,6 @@ main{max-width:1180px;margin:auto;padding:0 20px 70px}
   <div class="cocktail-guide">
     <div class="cocktail-guide-head">
       <h3>Какой коктейль выбрать</h3>
-      <p>Ориентир по вкусу и крепости: 🟢 мягче, 🟡 средне, 🔴 алкоголь заметнее. Итог зависит от пропорций конкретного бармена.</p>
     </div>
     <div class="cocktail-table-wrap">
       <table class="cocktail-table">
