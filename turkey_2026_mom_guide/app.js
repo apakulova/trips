@@ -10,13 +10,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   app.innerHTML = `<div class="page">${contentA}${schedule}${contentB}</div>`;
 
-  const roomSection = [...app.querySelectorAll('.section')].find(section =>
-    section.querySelector('h2')?.textContent.trim().startsWith('Для номера')
-  );
+  const checklistSection = app.querySelector('#checklist');
   const quickSection = app.querySelector('.quick');
 
-  if (roomSection) {
-    roomSection.insertAdjacentHTML('beforebegin', spaContent);
+  if (checklistSection) {
+    checklistSection.insertAdjacentHTML('beforebegin', spaContent);
   } else if (quickSection) {
     quickSection.insertAdjacentHTML('beforebegin', spaContent);
   }
