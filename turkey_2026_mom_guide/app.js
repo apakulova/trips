@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const app = document.getElementById('app');
-  const parts = await Promise.all(['content-a.html', 'content-b.html'].map(async file => {
+  const parts = await Promise.all(['content-a.html', 'schedule.html', 'content-b.html'].map(async file => {
     const response = await fetch(file);
     if (!response.ok) throw new Error(`Не удалось загрузить ${file}`);
     return response.text();
