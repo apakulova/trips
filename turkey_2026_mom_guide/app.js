@@ -1,12 +1,25 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const app = document.getElementById('app');
-  const parts = await Promise.all(['content-a.html', 'schedule.html', 'content-b.html'].map(async file => {
-    const response = await fetch(file);
-    if (!response.ok) throw new Error(`Не удалось загрузить ${file}`);
-    return response.text();
-  }));
+  const [contentA, schedule, contentB, spaContent] = await Promise.all(
+    ['content-a.html', 'schedule.html', 'content-b.html', 'spa.html'].map(async file => {
+      const response = await fetch(file);
+      if (!response.ok) throw new Error(`Не удалось загрузить ${file}`);
+      return response.text();
+    })
+  );
 
-  app.innerHTML = `<div class="page">${parts.join('')}</div>`;
+  app.innerHTML = `<div class="page">${contentA}${schedule}${contentB}</div>`;
+
+  const roomSection = [...app.querySelectorAll('.section')].find(section =>
+    section.querySelector('h2')?.textContent.trim().startsWith('Для номера')
+  );
+  const quickSection = app.querySelector('.quick');
+
+  if (roomSection) {
+    roomSection.insertAdjacentHTML('beforebegin', spaContent);
+  } else if (quickSection) {
+    quickSection.insertAdjacentHTML('beforebegin', spaContent);
+  }
 
   function typographText(root) {
     const ignoredTags = new Set(['SCRIPT', 'STYLE', 'CODE', 'PRE', 'TEXTAREA']);
