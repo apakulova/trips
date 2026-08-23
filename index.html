@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2efe9">
+  <meta name="description" content="Личная коллекция путеводителей по Алтаю, Турции, Рязани и будущим поездкам.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apakulova.github.io/trips/">
+  <meta property="og:title" content="Гайды по поездкам — Trips">
+  <meta property="og:description" content="Алтай, Турция, Рязань и будущие путешествия в одной личной коллекции.">
+  <meta property="og:image" content="https://apakulova.github.io/trips/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Гайды по поездкам: Алтай, Турция, Рязань">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Гайды по поездкам — Trips">
+  <meta name="twitter:description" content="Алтай, Турция, Рязань и будущие путешествия в одной личной коллекции.">
+  <meta name="twitter:image" content="https://apakulova.github.io/trips/og.png">
+  <title>Trips — путеводители по поездкам</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar" aria-label="Главная навигация">
+      <a class="brand" href="./" aria-label="Trips — главная">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>Trips</span>
+      </a>
+      <span class="guide-count" data-guide-count>3 гайда</span>
+    </nav>
+
+    <div class="hero-copy">
+      <p class="eyebrow">Личная коллекция путешествий</p>
+      <h1>Гайды, с которыми<br><em>хочется уехать.</em></h1>
+      <p class="hero-lede">Маршруты, памятки и сохранённые места — всё важное для каждой поездки собрано в одном месте.</p>
+    </div>
+
+    <div class="hero-note" aria-hidden="true">
+      <span class="route-dot"></span>
+      <span>2026</span>
+      <span class="route-line"></span>
+      <span>и дальше</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="guides-section" aria-labelledby="guides-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Выбрать направление</p>
+          <h2 id="guides-title">Все поездки</h2>
+        </div>
+        <p>Коллекция растёт вместе с новыми маршрутами.</p>
+      </div>
+
+      <div class="guides-grid" id="guidesGrid" aria-live="polite">
+        <p class="loading">Загружаем гайды…</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Собрано с любовью к путешествиям</span>
+    <span aria-hidden="true">✦</span>
+    <span>2026</span>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

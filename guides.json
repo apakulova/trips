@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Алтай",
+    "kind": "Путеводитель",
+    "dates": "12–18 августа 2026",
+    "description": "Маршрут по дням, красивые точки, образы и заметки для поездки по Горному Алтаю.",
+    "href": "altai-2026/",
+    "cover": "altai-2026/photos/day14-chuysky-road.jpg",
+    "coverPosition": "center center",
+    "accent": "#d39b32"
+  },
+  {
+    "title": "Турция",
+    "kind": "Памятка для мамы",
+    "dates": "5–13 сентября 2026",
+    "description": "Перелёт, документы, ручная кладь, отель и удобный чек-лист перед поездкой.",
+    "href": "turkey_2026_mom_guide/",
+    "cover": "turkey_2026_mom_guide/assets/hero.jpg",
+    "coverPosition": "center 38%",
+    "accent": "#ed2d79"
+  },
+  {
+    "title": "Рязань",
+    "kind": "Личный гайд",
+    "dates": "Сентябрь 2026",
+    "description": "30 сохранённых мест: кремль, старый город, прогулки, кафе и окрестности Оки.",
+    "href": "ryazan_2026/",
+    "cover": "assets/covers/ryazan.webp",
+    "coverPosition": "center 24%",
+    "accent": "#4f83a8"
+  }
+]
