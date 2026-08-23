@@ -8,25 +8,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     })
   );
 
-  app.innerHTML = `<div class="page">${contentA}${schedule}${contentB}</div>`;
+  app.innerHTML = `<div class="page">${contentA}${contentB}</div>`;
 
   const checklistSection = app.querySelector('#checklist');
   const quickSection = app.querySelector('.quick');
 
   if (checklistSection) {
-    checklistSection.insertAdjacentHTML('beforebegin', spaContent);
+    checklistSection.insertAdjacentHTML('beforebegin', `${schedule}${spaContent}`);
   } else if (quickSection) {
-    quickSection.insertAdjacentHTML('beforebegin', spaContent);
+    quickSection.insertAdjacentHTML('beforebegin', `${schedule}${spaContent}`);
   }
 
   const sectionAnchors = [
     ['Перелёт', 'flight'],
     ['Самое важное', 'packing'],
     ['Как всё будет после', 'arrival'],
-    ['Когда кормят', 'food'],
     ['Море, бассейн', 'sea'],
     ['Одежда в отеле', 'clothes'],
     ['Деньги', 'money'],
+    ['Для номера', 'room'],
+    ['Когда кормят', 'food'],
     ['Хамам и массаж', 'spa'],
     ['Твой чек-лист', 'checklist']
   ];
@@ -88,10 +89,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         <a class="toc-chip pink" href="#flight">✈️ Перелёт</a>
         <a class="toc-chip green" href="#packing">🧳 Сборы</a>
         <a class="toc-chip sand" href="#arrival">🛂 Прилёт</a>
-        <a class="toc-chip pink" href="#food">🍽 Еда</a>
         <a class="toc-chip green" href="#sea">🏖 Море</a>
         <a class="toc-chip sand" href="#clothes">👗 Одежда</a>
         <a class="toc-chip pink" href="#money">💳 Деньги</a>
+        <a class="toc-chip sand" href="#room">🛏 Для номера</a>
+        <a class="toc-chip pink" href="#food">🍽 Еда</a>
         <a class="toc-chip green" href="#spa">🧖‍♀️ Хамам</a>
         <a class="toc-chip sand" href="#checklist">✓ Чек-лист</a>
       </div>
