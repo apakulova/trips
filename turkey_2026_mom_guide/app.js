@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const duration = metaItems[0].textContent.trim();
     const wrap = document.createElement('div');
     wrap.className = 'arrow-wrap';
-    wrap.innerHTML = `<div class="arrow">→</div><div class="flight-duration">В пути: ${duration}</div>`;
+    wrap.innerHTML = `<div class="arrow">→</div><div class="flight-duration">В пути ${duration}</div>`;
     arrow.replaceWith(wrap);
     metaItems[0].remove();
   });
@@ -111,15 +111,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     .toc-chip.sand{background:#f4efe8;border-color:#e6d9ce;color:#665d63}
     .toc-chip:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(65,46,45,.08)}
     .toc-chip:focus-visible{outline:3px solid rgba(217,31,104,.2);outline-offset:2px}
-    .arrow-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
-    .flight-duration{font-size:13px;color:var(--muted);font-weight:700;white-space:nowrap}
+    .arrow-wrap{display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+    .arrow-wrap .arrow{height:34px;line-height:34px}
+    .flight-duration{margin-top:6px;font-size:14px;line-height:1;color:var(--muted);font-weight:400;white-space:nowrap}
     @media (max-width:640px){
       .toc-nav{margin:-3px 2px -3px}
       .toc-label{font-size:12px;margin-bottom:7px}
       .toc-chips{gap:6px}
       .toc-chip{min-height:32px;padding:7px 10px;font-size:12px}
-      .arrow-wrap{gap:6px}
-      .flight-duration{font-size:11px}
+      .arrow-wrap .arrow{height:29px;line-height:29px}
+      .flight-duration{margin-top:6px;font-size:12px}
     }
   `;
   document.head.appendChild(tocStyle);
