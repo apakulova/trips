@@ -40,6 +40,43 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (section) section.id = id;
   });
 
+  // Убираем повторную оговорку под расписанием — она уже есть в подзаголовке блока.
+  app.querySelector('#food .alert')?.remove();
+
+  // В карточках перелёта переносим длительность из отдельной плашки под стрелку.
+  app.querySelectorAll('#flight .card').forEach(card => {
+    const flight = card.querySelector('.flight');
+    const arrow = flight?.querySelector('.arrow');
+    const meta = card.querySelector('.meta');
+    const metaItems = meta ? [...meta.querySelectorAll('span')] : [];
+    if (!flight || !arrow || metaItems.length < 3) return;
+
+    const duration = metaItems[0].textContent.trim();
+    const wrap = document.createElement('div');
+    wrap.className = 'arrow-wrap';
+    wrap.innerHTML = `<div class="arrow">→</div><div class="flight-duration">В пути: ${duration}</div>`;
+    arrow.replaceWith(wrap);
+    metaItems[0].remove();
+  });
+
+  // Уточняем блок необязательных расходов.
+  const moneyCard = app.querySelector('#money .card.pink');
+  if (moneyCard) {
+    const title = moneyCard.querySelector('h3');
+    const lead = moneyCard.querySelector('.money-lead');
+    const list = moneyCard.querySelector('.list');
+    if (title) title.textContent = 'Если захочется';
+    if (lead) lead.textContent = 'Для чего пригодятся деньги';
+    if (list) {
+      list.innerHTML = `
+        <div class="item"><span class="bullet">✓</span><span>Сувениры и турецкие сладости на базаре — обязательно выделим время просто походить и посмотреть</span></div>
+        <div class="item"><span class="bullet">✓</span><span><strong>Хамам и массаж — по отзывам это стоит около $30 с человека</strong></span></div>
+        <div class="item"><span class="bullet">✓</span><span>Какая-нибудь мелочь: крем, надувной круг и другое</span></div>
+        <div class="item"><span class="bullet">✓</span><span>Экскурсии — это я беру на себя</span></div>
+      `;
+    }
+  }
+
   const hero = app.querySelector('.hero');
   if (hero) {
     const toc = document.createElement('nav');
@@ -74,11 +111,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     .toc-chip.sand{background:#f4efe8;border-color:#e6d9ce;color:#665d63}
     .toc-chip:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(65,46,45,.08)}
     .toc-chip:focus-visible{outline:3px solid rgba(217,31,104,.2);outline-offset:2px}
+    .arrow-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+    .flight-duration{font-size:13px;color:var(--muted);font-weight:700;white-space:nowrap}
     @media (max-width:640px){
       .toc-nav{margin:-3px 2px -3px}
       .toc-label{font-size:12px;margin-bottom:7px}
       .toc-chips{gap:6px}
       .toc-chip{min-height:32px;padding:7px 10px;font-size:12px}
+      .arrow-wrap{gap:6px}
+      .flight-duration{font-size:11px}
     }
   `;
   document.head.appendChild(tocStyle);
