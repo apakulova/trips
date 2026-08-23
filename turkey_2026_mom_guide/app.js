@@ -21,6 +21,70 @@ document.addEventListener('DOMContentLoaded', async () => {
     quickSection.insertAdjacentHTML('beforebegin', spaContent);
   }
 
+  const sectionAnchors = [
+    ['Перелёт', 'flight'],
+    ['Самое важное', 'packing'],
+    ['Как всё будет после', 'arrival'],
+    ['Когда кормят', 'food'],
+    ['Море, бассейн', 'sea'],
+    ['Одежда в отеле', 'clothes'],
+    ['Деньги', 'money'],
+    ['Хамам и массаж', 'spa'],
+    ['Твой чек-лист', 'checklist']
+  ];
+
+  const sections = [...app.querySelectorAll('.section')];
+  sectionAnchors.forEach(([start, id]) => {
+    const section = sections.find(item => {
+      const title = item.querySelector('h2')?.textContent.replace(/\s+/g, ' ').trim() || '';
+      return title.startsWith(start);
+    });
+    if (section) section.id = id;
+  });
+
+  const hero = app.querySelector('.hero');
+  if (hero) {
+    const toc = document.createElement('nav');
+    toc.className = 'toc-nav';
+    toc.setAttribute('aria-label', 'Оглавление');
+    toc.innerHTML = `
+      <div class="toc-label">Оглавление</div>
+      <div class="toc-chips">
+        <a class="toc-chip pink" href="#flight">✈️ Перелёт</a>
+        <a class="toc-chip green" href="#packing">🧳 Сборы</a>
+        <a class="toc-chip sand" href="#arrival">🛂 Прилёт</a>
+        <a class="toc-chip pink" href="#food">🍽 Еда</a>
+        <a class="toc-chip green" href="#sea">🏖 Море</a>
+        <a class="toc-chip sand" href="#clothes">👗 Одежда</a>
+        <a class="toc-chip pink" href="#money">💳 Деньги</a>
+        <a class="toc-chip green" href="#spa">🧖‍♀️ Хамам</a>
+        <a class="toc-chip sand" href="#checklist">✓ Чек-лист</a>
+      </div>
+    `;
+    hero.insertAdjacentElement('afterend', toc);
+  }
+
+  const tocStyle = document.createElement('style');
+  tocStyle.textContent = `
+    .section[id]{scroll-margin-top:18px}
+    .toc-nav{margin:-10px 2px -8px;padding-top:2px}
+    .toc-label{margin:0 0 9px 2px;color:var(--muted);font-size:13px;font-weight:800;letter-spacing:.02em}
+    .toc-chips{display:flex;flex-wrap:wrap;gap:8px}
+    .toc-chip{display:inline-flex;align-items:center;min-height:36px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-size:13px;font-weight:800;line-height:1;background:var(--paper);box-shadow:0 3px 12px rgba(65,46,45,.04);transition:transform .15s ease,box-shadow .15s ease}
+    .toc-chip.pink{background:var(--fuchsia-soft);border-color:#f9c5d8;color:#98244e}
+    .toc-chip.green{background:var(--green-soft);border-color:#dbe9b8;color:#4d671f}
+    .toc-chip.sand{background:#f4efe8;border-color:#e6d9ce;color:#665d63}
+    .toc-chip:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(65,46,45,.08)}
+    .toc-chip:focus-visible{outline:3px solid rgba(217,31,104,.2);outline-offset:2px}
+    @media (max-width:640px){
+      .toc-nav{margin:-3px 2px -3px}
+      .toc-label{font-size:12px;margin-bottom:7px}
+      .toc-chips{gap:6px}
+      .toc-chip{min-height:32px;padding:7px 10px;font-size:12px}
+    }
+  `;
+  document.head.appendChild(tocStyle);
+
   function typographText(root) {
     const ignoredTags = new Set(['SCRIPT', 'STYLE', 'CODE', 'PRE', 'TEXTAREA']);
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
