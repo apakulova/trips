@@ -1,3 +1,36 @@
+function typographText(root) {
+  const ignoredTags = new Set(['SCRIPT', 'STYLE', 'CODE', 'PRE', 'TEXTAREA']);
+  const nodes = [];
+
+  if (root.nodeType === Node.TEXT_NODE) {
+    nodes.push(root);
+  } else {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+  }
+
+  const shortWord = /(^|[^\p{L}\p{N}])([\p{L}]{1,3})[ \t]+(?=\S|$)/gu;
+  nodes.forEach(node => {
+    if (!node.nodeValue?.trim() || ignoredTags.has(node.parentElement?.tagName)) return;
+    let value = node.nodeValue;
+    let previousValue;
+    do {
+      previousValue = value;
+      value = value.replace(shortWord, '$1$2\u00a0');
+    } while (value !== previousValue);
+    node.nodeValue = value;
+  });
+}
+
+typographText(document.body);
+
+const typographyObserver = new MutationObserver(records => {
+  records.forEach(record => {
+    record.addedNodes.forEach(node => typographText(node));
+  });
+});
+typographyObserver.observe(document.body, {childList: true, subtree: true});
+
 const guidesGrid = document.getElementById('guidesGrid');
 const countLabels = document.querySelectorAll('[data-guide-count]');
 

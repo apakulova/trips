@@ -19,6 +19,7 @@ body{
   line-height:1.5;
 }
 a{color:inherit}
+p{ text-wrap:pretty }
 .hero{max-width:1280px;margin:0 auto;padding:24px 34px 66px;min-height:530px;display:flex;flex-direction:column;position:relative}
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:700 19px/1 Georgia,"Times New Roman",serif;letter-spacing:.01em}
