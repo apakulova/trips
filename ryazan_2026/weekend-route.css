@@ -9,10 +9,6 @@
 }
 
 .route-day-head {
-  display: grid;
-  grid-template-columns: minmax(430px, .9fr) minmax(280px, .65fr);
-  gap: 12px 42px;
-  align-items: end;
   padding: 0;
 }
 
@@ -32,29 +28,13 @@
   white-space: nowrap;
 }
 
-.route-day-head > p {
-  max-width: 430px;
-  margin: 0 0 2px;
-  color: var(--muted);
-  font-size: 15px;
-}
-
 @media (max-width: 900px) {
   .route-days {
     gap: 46px;
     margin-top: 20px;
   }
 
-  .route-day-head {
-    grid-template-columns: 1fr;
-    gap: 9px;
-  }
-
   .route-day-head h3 {
     white-space: normal;
-  }
-
-  .route-day-head > p {
-    font-size: 14px;
   }
 }
