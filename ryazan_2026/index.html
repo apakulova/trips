@@ -19,7 +19,7 @@
   <script>
     (async()=>{
       try{
-        const version="20260916-2255";
+        const version="20260916-2215-food";
         const [baseResponse,routeResponse,stylesResponse,weekendStylesResponse]=await Promise.all([
           fetch("base.html?v="+version,{cache:"no-store"}),
           fetch("friday-route.html?v="+version,{cache:"no-store"}),
@@ -33,7 +33,7 @@
         const styles=await stylesResponse.text();
         const weekendStyles=await weekendStylesResponse.text();
         page=page.replace("</style>",styles+"\n"+weekendStyles+"\n</style>");
-        page=page.replace("30 карточек · 6 тематических разделов · практика поездки","30 карточек · маршрут на выходные · практика поездки");
+        page=page.replace("30 карточек · 6 тематических разделов · практика поездки","32 карточки · маршрут на выходные · практика поездки");
 
         const tripChip='<a class="chip" href="#trip">🧳 Поездка <span>практика</span></a>';
         if(!page.includes('href="#friday-route"')){
