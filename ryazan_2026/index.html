@@ -19,18 +19,20 @@
   <script>
     (async()=>{
       try{
-        const version="20260916-1940";
-        const [baseResponse,routeResponse,stylesResponse]=await Promise.all([
+        const version="20260916-2200";
+        const [baseResponse,routeResponse,stylesResponse,weekendStylesResponse]=await Promise.all([
           fetch("base.html?v="+version,{cache:"no-store"}),
           fetch("friday-route.html?v="+version,{cache:"no-store"}),
-          fetch("friday-route.css?v="+version,{cache:"no-store"})
+          fetch("friday-route.css?v="+version,{cache:"no-store"}),
+          fetch("weekend-route.css?v="+version,{cache:"no-store"})
         ]);
-        if(!baseResponse.ok||!routeResponse.ok||!stylesResponse.ok)throw new Error("Не удалось загрузить файлы гайда");
+        if(!baseResponse.ok||!routeResponse.ok||!stylesResponse.ok||!weekendStylesResponse.ok)throw new Error("Не удалось загрузить файлы гайда");
 
         let page=await baseResponse.text();
         const route=await routeResponse.text();
         const styles=await stylesResponse.text();
-        page=page.replace("</style>",styles+"\n</style>");
+        const weekendStyles=await weekendStylesResponse.text();
+        page=page.replace("</style>",styles+"\n"+weekendStyles+"\n</style>");
         page=page.replace("30 карточек · 6 тематических разделов · практика поездки","30 карточек · маршрут на выходные · практика поездки");
 
         const tripChip='<a class="chip" href="#trip">🧳 Поездка <span>практика</span></a>';

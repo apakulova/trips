@@ -1,0 +1,77 @@
+.route-days {
+  display: grid;
+  gap: 42px;
+  margin-top: 26px;
+}
+
+.route-day {
+  min-width: 0;
+}
+
+.route-day-head {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.55fr) minmax(0, 1fr);
+  gap: 18px 32px;
+  align-items: end;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-left: 6px solid #8b7460;
+  border-radius: 18px;
+  background: #f1ece4;
+  box-shadow: 0 7px 22px #2a1f130e;
+}
+
+.route-day:nth-child(2) .route-day-head {
+  border-left-color: var(--accent);
+  background: #fff7ed;
+}
+
+.route-day:nth-child(3) .route-day-head {
+  border-left-color: #526b86;
+  background: #eef2f6;
+}
+
+.route-day-kicker {
+  margin-bottom: 4px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.route-day-head h3 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1;
+}
+
+.route-day-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.route-day .route-schedule {
+  margin-top: 10px;
+}
+
+@media (max-width: 760px) {
+  .route-days {
+    gap: 32px;
+  }
+
+  .route-day-head {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 18px;
+  }
+
+  .route-day-head h3 {
+    font-size: 30px;
+  }
+
+  .route-day-head p {
+    font-size: 14px;
+  }
+}
