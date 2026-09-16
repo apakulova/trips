@@ -56,6 +56,10 @@
   margin-top: 10px;
 }
 
+.route-schedule .route-cruise-details {
+  grid-column: 3;
+}
+
 @media (max-width: 760px) {
   .route-days {
     gap: 32px;
@@ -73,5 +77,15 @@
 
   .route-day-head p {
     font-size: 14px;
+  }
+
+  .route-schedule .route-cruise-details {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .route-schedule .route-cruise-details {
+    grid-column: 1;
   }
 }
