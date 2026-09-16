@@ -19,7 +19,7 @@
   <script>
     (async()=>{
       try{
-        const version="20260916-2350-route-calm";
+        const version="20260916-2315-weather";
         const [baseResponse,routeResponse,stylesResponse,weekendStylesResponse]=await Promise.all([
           fetch("base.html?v="+version,{cache:"no-store"}),
           fetch("friday-route.html?v="+version,{cache:"no-store"}),
@@ -37,7 +37,7 @@
 
         const tripChip='<a class="chip" href="#trip">🧳 Поездка <span>практика</span></a>';
         if(!page.includes('href="#friday-route"')){
-          page=page.replace(tripChip,tripChip+'<a class="chip" href="#friday-route">🗺️ Маршрут на выходные <span>2 дня</span></a>');
+          page=page.replace(tripChip,tripChip+'<a class="chip" href="#weather">🌦️ Погода <span>18–20 сен</span></a><a class="chip" href="#friday-route">🗺️ Маршрут на выходные <span>2 дня</span></a>');
         }
 
         const routeStart=page.indexOf('<section class="section" id="friday-route">');
