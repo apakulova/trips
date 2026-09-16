@@ -88,6 +88,79 @@
   text-underline-offset: 3px;
 }
 
+.hotel-dining {
+  background: #f1ece4;
+}
+
+.hotel-dining > h3 {
+  margin-bottom: 18px;
+}
+
+.hotel-dining-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.hotel-restaurant {
+  min-width: 0;
+}
+
+.hotel-restaurant-pick {
+  margin-bottom: 7px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.hotel-restaurant h4 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  line-height: 1.1;
+  letter-spacing: -.025em;
+}
+
+.hotel-hours {
+  margin: 5px 0 10px;
+  color: #625a52;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.hotel-restaurant p {
+  margin: 0;
+  color: #5c564f;
+  font-size: 16px;
+}
+
+.hotel-restaurant .hotel-check {
+  margin-top: 10px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.hotel-restaurant .sources {
+  margin-top: 10px;
+}
+
+.hotel-dining-backup {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #d7cdbf;
+  color: #5c564f;
+  font-size: 16px;
+}
+
+.hotel-dining-backup a {
+  color: #49433d;
+  font-weight: 750;
+  text-underline-offset: 3px;
+}
+
 .route-layout {
   display: grid;
   gap: 0;
@@ -293,6 +366,11 @@
 }
 
 @media (max-width: 760px) {
+  .hotel-dining-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
   .weather-days {
     grid-template-columns: 1fr;
     gap: 18px;
