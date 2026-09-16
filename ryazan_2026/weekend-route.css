@@ -1,7 +1,7 @@
 .route-days {
   display: grid;
   gap: 58px;
-  margin-top: 26px;
+  margin-top: 10px;
 }
 
 .route-day {
@@ -10,8 +10,8 @@
 
 .route-day-head {
   display: grid;
-  grid-template-columns: minmax(240px, .46fr) minmax(0, 1fr);
-  gap: 12px 36px;
+  grid-template-columns: minmax(430px, .9fr) minmax(280px, .65fr);
+  gap: 12px 42px;
   align-items: end;
   padding: 0;
 }
@@ -27,18 +27,19 @@
 
 .route-day-head h3 {
   margin: 0;
-  font-size: clamp(28px, 3.5vw, 36px);
+  font-size: clamp(28px, 3.2vw, 36px);
   line-height: 1.05;
+  white-space: nowrap;
 }
 
 .route-day-head > p {
-  max-width: 680px;
+  max-width: 430px;
   margin: 0 0 2px;
   color: var(--muted);
   font-size: 15px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .route-days {
     gap: 46px;
     margin-top: 20px;
@@ -47,6 +48,10 @@
   .route-day-head {
     grid-template-columns: 1fr;
     gap: 9px;
+  }
+
+  .route-day-head h3 {
+    white-space: normal;
   }
 
   .route-day-head > p {

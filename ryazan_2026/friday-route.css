@@ -166,77 +166,14 @@
   gap: 0;
 }
 
-.route-overview {
-  max-width: 960px;
-  padding: 4px 0 28px;
-}
-
-.route-topline {
-  margin-bottom: 12px;
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 850;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.route-summary {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px 44px;
-}
-
-.route-summary div {
-  display: grid;
-  gap: 3px;
-}
-
-.route-summary span {
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 750;
-}
-
-.route-summary strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(21px, 2.3vw, 28px);
-  line-height: 1.12;
-  letter-spacing: -.025em;
-}
-
-.route-overview > p {
-  max-width: 780px;
-  margin: 18px 0 0;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.link-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px 18px;
-  margin-top: 16px;
-}
-
-.route-link {
-  color: #544c43;
-  font-size: 13px;
-  font-weight: 700;
-  text-decoration-color: #b9aa9a;
-  text-underline-offset: 3px;
-}
-
-.route-link:hover {
-  color: var(--accent);
-}
-
 .route-steps.route-schedule {
+  grid-template-columns: 1fr;
   padding-left: 0;
 }
 
 .route-schedule {
   display: grid;
-  gap: 24px;
+  gap: 0;
   margin-top: 22px;
   counter-reset: none;
 }
@@ -248,14 +185,25 @@
 .route-schedule .route-step {
   position: relative;
   display: grid;
-  grid-template-columns: 132px minmax(0, 1fr);
-  gap: 4px 26px;
+  grid-column: 1 / -1;
+  grid-template-columns: 132px minmax(220px, .52fr) minmax(0, 1fr);
+  gap: 5px 28px;
   width: 100%;
-  padding: 0;
+  padding: 22px 0;
   border: 0;
+  border-bottom: 1px solid rgba(117, 111, 102, .14);
   border-radius: 0;
   background: transparent;
   box-shadow: none;
+}
+
+.route-schedule .route-step:first-child {
+  padding-top: 0;
+}
+
+.route-schedule .route-step:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .route-schedule .route-step::before {
@@ -287,23 +235,30 @@
 .route-schedule .route-step p,
 .route-schedule .route-meta,
 .route-schedule .route-cruise-details {
-  grid-column: 2;
+  min-width: 0;
 }
 
 .route-schedule .route-step h3 {
-  margin: 0 0 3px;
+  grid-column: 2;
+  grid-row: 1 / span 3;
+}
+
+.route-schedule .route-step h3 {
+  margin: 0;
   font-size: clamp(21px, 2.4vw, 25px);
   line-height: 1.12;
 }
 
 .route-schedule .route-step p {
+  grid-column: 3;
   max-width: 780px;
   margin: 0;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .route-schedule .route-meta {
+  grid-column: 3;
   max-width: 780px;
   margin-top: 5px;
   color: #4f4942;
@@ -315,6 +270,10 @@
   color: var(--muted);
   font-size: inherit;
   font-weight: 500;
+}
+
+.route-schedule .route-cruise-details {
+  grid-column: 3;
 }
 
 .route-cruise-details .badges {
@@ -365,6 +324,21 @@
   text-underline-offset: 3px;
 }
 
+@media (max-width: 900px) {
+  .route-schedule .route-step {
+    grid-template-columns: 105px minmax(0, 1fr);
+    gap: 4px 18px;
+  }
+
+  .route-schedule .route-step h3,
+  .route-schedule .route-step p,
+  .route-schedule .route-meta,
+  .route-schedule .route-cruise-details {
+    grid-column: 2;
+    grid-row: auto;
+  }
+}
+
 @media (max-width: 760px) {
   .hotel-dining-grid {
     grid-template-columns: 1fr;
@@ -388,22 +362,8 @@
     padding: 20px;
   }
 
-  .route-overview {
-    padding-bottom: 22px;
-  }
-
-  .route-summary {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
   .route-schedule {
-    gap: 26px;
-  }
-
-  .route-schedule .route-step {
-    grid-template-columns: 105px minmax(0, 1fr);
-    gap: 4px 18px;
+    gap: 0;
   }
 }
 
