@@ -1,5 +1,15 @@
 [
   {
+    "title": "Белград",
+    "kind": "Городской путеводитель",
+    "dates": "2–5 октября 2026",
+    "description": "Белград, конференция «Дизайн в Финтехе» и отдельный день в Нови-Саде.",
+    "href": "belgrade-2026/",
+    "cover": "belgrade-2026/assets/belgrade-panorama.jpg",
+    "coverPosition": "center center",
+    "accent": "#e5a16f"
+  },
+  {
     "title": "Алтай",
     "kind": "Путеводитель",
     "dates": "12–18 августа 2026",
