@@ -2,15 +2,18 @@
   const tabs = [...document.querySelectorAll('[role="tab"]')];
   const panels = {
     route: document.getElementById('route-view'),
-    practice: document.getElementById('practice-view')
+    practice: document.getElementById('practice-view'),
+    clothing: document.getElementById('clothing-view')
   };
   const navs = {
     route: document.getElementById('route-nav'),
-    practice: document.getElementById('practice-nav')
+    practice: document.getElementById('practice-nav'),
+    clothing: document.getElementById('clothing-nav')
   };
 
   function viewForHash() {
     const target = location.hash && document.querySelector(location.hash);
+    if (target && panels.clothing.contains(target)) return 'clothing';
     return target && panels.practice.contains(target) ? 'practice' : 'route';
   }
 
@@ -35,7 +38,7 @@
       tab.setAttribute('aria-selected', String(active));
       tab.tabIndex = active ? 0 : -1;
     });
-    if (options.updateHash) history.replaceState(null, '', next === 'practice' ? '#bookings' : '#summary');
+    if (options.updateHash) history.replaceState(null, '', {route: '#summary', practice: '#bookings', clothing: '#clothing-intro'}[next]);
     if (options.scroll) scrollToHash(options.instant ? 'auto' : 'smooth');
   }
 
@@ -53,6 +56,10 @@
 
   navs.practice.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setView('practice')));
   navs.route.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setView('route')));
+  navs.clothing.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setView('clothing')));
+  panels.clothing.querySelectorAll('img[data-sheet]').forEach(image => {
+    image.src = `assets/wardrobe-${image.dataset.sheet}.png`;
+  });
   window.addEventListener('hashchange', () => setView(viewForHash(), {scroll: true}));
   setView(viewForHash());
 
