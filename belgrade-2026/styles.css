@@ -140,7 +140,7 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .timeline-photo-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:660px}
 .timeline-photo-strip figure{min-width:0;margin:0;overflow:hidden;border:1px solid var(--line);border-radius:15px;background:#f0eee9}
 .timeline-photo-strip img{display:block;width:100%;height:auto}
-.timeline-photo-strip.fortress-photo-strip{max-width:none;grid-template-columns:repeat(4,minmax(0,1fr))}
+.timeline-photo-strip.fortress-photo-strip,.timeline-photo-strip.city-photo-strip{max-width:none;grid-template-columns:repeat(4,minmax(0,1fr))}
 .timeline-photo-strip figure>a{display:block;cursor:zoom-in}
 .timeline-photo-strip figure>a:focus-visible{outline:3px solid var(--plum);outline-offset:-3px}
 .lightbox-open{overflow:hidden}
@@ -322,7 +322,7 @@ h3{font-size:22px;line-height:1.1;margin:0}
   .practical-card>div:nth-child(3){text-align:left}
   .practical-card>a{justify-self:start}
   .train-help{grid-template-columns:1fr}
-  .timeline-photo-strip.fortress-photo-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .timeline-photo-strip.fortress-photo-strip,.timeline-photo-strip.city-photo-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:650px){
   .wrap{width:min(100% - 24px,1180px)}
@@ -369,7 +369,7 @@ h3{font-size:22px;line-height:1.1;margin:0}
   .timeline-insight{padding:15px 16px}
   .timeline-photo-strip{display:grid;grid-auto-flow:column;grid-auto-columns:min(76%,290px);grid-template-columns:none;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;padding-bottom:7px}
   .timeline-photo-strip figure{scroll-snap-align:start}
-  .timeline-photo-strip.fortress-photo-strip{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:minmax(0,1fr);overflow:visible;padding-bottom:0}
+  .timeline-photo-strip.fortress-photo-strip,.timeline-photo-strip.city-photo-strip{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:minmax(0,1fr);overflow:visible;padding-bottom:0}
   .photo-lightbox-shell{padding:10px 8px}
   .photo-lightbox-toolbar{gap:8px}
   .photo-lightbox-controls{gap:4px}
