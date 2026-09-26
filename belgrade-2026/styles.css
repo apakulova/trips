@@ -188,6 +188,12 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .stay-card>p{margin:0;color:var(--muted)}
 .stay-card>div{grid-row:1/4;grid-column:2;display:flex;flex-direction:column;gap:9px}
 .stay-card>a{font-size:13px;font-weight:800;text-underline-offset:4px}
+.stay-dining{grid-column:1/-1;margin-top:12px;padding:18px 20px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.56)}
+.stay-dining>strong{display:block;margin-bottom:7px;color:var(--ink);font-size:16px}
+.stay-dining p{max-width:78ch;margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.stay-dining p strong{color:var(--ink)}
+.stay-dining nav{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:12px}
+.stay-dining a{color:var(--plum);font-size:13px;font-weight:800;text-underline-offset:3px}
 .luggage-note{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:18px;background:var(--navy);color:#fff;border-radius:17px;padding:18px 20px}
 .luggage-note span{color:rgba(255,255,255,.76)}
 .airport-guide{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);overflow:hidden;background:var(--navy);color:#fff}
