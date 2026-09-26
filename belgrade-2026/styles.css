@@ -208,6 +208,8 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .stay-card>p{margin:0;color:var(--muted)}
 .stay-card>div{grid-row:1/4;grid-column:2;display:flex;flex-direction:column;gap:9px}
 .stay-card>a{font-size:13px;font-weight:800;text-underline-offset:4px}
+.stay-card>.stay-checkout-note{font-size:13px;line-height:1.55}
+.stay-checkout-note a{color:var(--plum);font-weight:750;text-underline-offset:3px}
 .stay-dining{grid-column:1/-1;margin-top:12px;padding:18px 20px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.56)}
 .stay-dining>strong{display:block;margin-bottom:7px;color:var(--ink);font-size:16px}
 .stay-dining p{max-width:78ch;margin:0;color:var(--muted);font-size:14px;line-height:1.6}
