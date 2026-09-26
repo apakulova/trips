@@ -301,6 +301,21 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .shuttle-help .train-help-tag{background:rgba(229,161,111,.2);color:#ffd4b7}
 .shuttle-help p{color:rgba(255,255,255,.78)}
 .shuttle-help .train-help-link{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3)}
+.novi-branch-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:stretch}
+.novi-branch-card{display:flex;flex-direction:column;padding:27px 28px;min-width:0}
+.novi-branch-head{padding-bottom:19px;border-bottom:1px solid var(--line)}
+.novi-branch-head h3{font-family:Georgia,"Times New Roman",serif;font-size:32px;margin:12px 0 7px}
+.novi-branch-head p{margin:0;color:var(--muted);font-size:14px}
+.novi-branch-steps{counter-reset:branch;list-style:none;margin:0;padding:0}
+.novi-branch-steps li{position:relative;padding:17px 0 17px 38px;border-bottom:1px solid var(--line);font-size:14px;line-height:1.58}
+.novi-branch-steps li::before{counter-increment:branch;content:counter(branch);position:absolute;top:17px;left:0;display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#ebdce0;color:var(--plum);font-size:12px;font-weight:850}
+.novi-branch-steps strong{display:block;margin-bottom:5px;color:var(--plum);font-size:15px;line-height:1.3}
+.novi-branch-steps span{color:var(--muted)}
+.novi-branch-steps b,.novi-branch-steps .place-name{color:var(--ink)}
+.novi-branch-steps a{color:var(--plum);font-weight:800;text-underline-offset:3px}
+.novi-branch-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:20px}
+.novi-branch-links a{padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:#f1eeea;color:var(--plum);font-size:12px;font-weight:800;text-decoration:none}
+.novi-branch-links a:hover{background:#ebdce0}
 .check-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .check-card{padding:21px}
 .check-card time{font-size:11px;font-weight:850;color:var(--plum);text-transform:uppercase;letter-spacing:.08em}
@@ -329,6 +344,7 @@ h3{font-size:22px;line-height:1.1;margin:0}
   .practical-card>div:nth-child(3){text-align:left}
   .practical-card>a{justify-self:start}
   .train-help{grid-template-columns:1fr}
+  .novi-branch-grid{grid-template-columns:1fr}
 }
 @media(max-width:650px){
   .wrap{width:min(100% - 24px,1180px)}
@@ -425,6 +441,8 @@ h3{font-size:22px;line-height:1.1;margin:0}
   .train-table tbody td:nth-child(5)::before{content:"≈ цена"}
   .train-pick{margin-left:4px}
   .train-help-card{padding:20px}
+  .novi-branch-card{padding:21px 20px}
+  .novi-branch-head h3{font-size:29px}
   .footer{padding-bottom:30px}
 }
 @media print{
