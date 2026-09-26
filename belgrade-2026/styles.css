@@ -142,6 +142,7 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .timeline-photo-strip img{display:block;width:100%;height:auto}
 .timeline-photo-strip.fortress-photo-strip{max-width:none;grid-template-columns:repeat(4,minmax(0,1fr))}
 .timeline-photo-strip.fortress-evening-photo-strip{max-width:none;grid-template-columns:repeat(2,minmax(0,1fr))}
+.timeline-photo-strip.route-map-photo{max-width:none;grid-template-columns:minmax(0,1fr)}
 .fortress-evening-photo-strip figure>a{aspect-ratio:4/5}
 .fortress-evening-photo-strip img{height:100%;object-fit:cover}
 .timeline-photo-strip.city-photo-strip{max-width:none;grid-template-columns:16fr 16fr 15fr 16fr;align-items:start}
@@ -269,6 +270,7 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .practical-card>div:nth-child(3){display:flex;flex-direction:column;text-align:right}
 .practical-card>div:nth-child(3) strong{font-size:27px}
 .practical-card>div:nth-child(3) span{color:var(--muted);font-size:12px}
+.conference-program-link a{color:var(--plum);font-weight:800;text-underline-offset:3px}
 .practical-card>a{background:var(--plum);color:#fff;text-decoration:none;font-weight:800;border-radius:999px;padding:11px 15px;font-size:13px}
 .train-options-list{display:grid;gap:17px}
 .train-options{padding:24px 26px}
@@ -373,7 +375,7 @@ h3{font-size:22px;line-height:1.1;margin:0}
   .timeline-insight{padding:15px 16px}
   .timeline-photo-strip{display:grid;grid-auto-flow:column;grid-auto-columns:min(76%,290px);grid-template-columns:none;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;padding-bottom:7px}
   .timeline-photo-strip figure{scroll-snap-align:start}
-  .timeline-photo-strip.fortress-photo-strip,.timeline-photo-strip.fortress-evening-photo-strip,.timeline-photo-strip.city-photo-strip,.timeline-photo-strip.morning-photo-pair,.timeline-photo-strip.skadarlija-photo-strip{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:minmax(0,1fr);overflow:visible;padding-bottom:0}
+  .timeline-photo-strip.fortress-photo-strip,.timeline-photo-strip.fortress-evening-photo-strip,.timeline-photo-strip.city-photo-strip,.timeline-photo-strip.morning-photo-pair,.timeline-photo-strip.skadarlija-photo-strip,.timeline-photo-strip.route-map-photo{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:minmax(0,1fr);overflow:visible;padding-bottom:0}
   .photo-lightbox-shell{padding:10px 8px}
   .photo-lightbox-toolbar{gap:8px}
   .photo-lightbox-controls{gap:4px}
