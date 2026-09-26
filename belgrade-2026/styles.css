@@ -127,6 +127,15 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .timeline-copy>*+*{margin-top:12px}
 .timeline-copy>p:first-child>strong:first-child{display:block;margin-bottom:6px;color:var(--ink);font-size:18px;line-height:1.35}
 .timeline-copy strong{color:var(--ink)}
+.timeline-insight{width:100%;padding:18px 20px;border-radius:14px;background:#f1ece9}
+.timeline-insight-label{margin:0 0 9px;color:var(--plum);font-size:11px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+.timeline-insight p:not(.timeline-insight-label){margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.timeline-insight p:not(:last-child){margin-bottom:9px}
+.timeline-insight a.place-name{color:var(--plum);text-decoration-thickness:1px;text-underline-offset:3px}
+.timeline-insight a.place-name:hover{color:var(--brick)}
+.timeline-photo-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:660px}
+.timeline-photo-strip figure{min-width:0;margin:0;overflow:hidden;border:1px solid var(--line);border-radius:15px;background:#f0eee9}
+.timeline-photo-strip img{display:block;width:100%;height:auto}
 .timeline-links{display:flex;flex-wrap:wrap;gap:8px}
 .timeline-links a{display:inline-flex;align-items:center;min-height:34px;padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:#f0eee9;color:var(--plum);font-size:12px;font-weight:800;text-decoration:none}
 .timeline-links a:hover{background:#e8dce0}
@@ -307,6 +316,9 @@ h3{font-size:22px;line-height:1.1;margin:0}
   .timeline time{font-size:16px}
   .timeline-copy>p{font-size:15px}
   .timeline-copy>p:first-child>strong:first-child{font-size:17px}
+  .timeline-insight{padding:15px 16px}
+  .timeline-photo-strip{display:grid;grid-auto-flow:column;grid-auto-columns:min(76%,290px);grid-template-columns:none;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;padding-bottom:7px}
+  .timeline-photo-strip figure{scroll-snap-align:start}
   .day-info-grid,.day-info-grid.two{grid-template-columns:1fr}
   .outfit-block{grid-column:auto}
   .conference-hero{padding:25px 20px}
