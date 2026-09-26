@@ -132,15 +132,21 @@
       setZoom(1);
     }
 
+    const photoGroups = new Map();
+    document.querySelectorAll('.timeline-photo-strip[data-photo-group]').forEach(strip => {
+      const group = strip.dataset.photoGroup;
+      photoGroups.set(group, [...(photoGroups.get(group) || []), ...strip.querySelectorAll('figure > a[href]')]);
+    });
     document.querySelectorAll('.timeline-photo-strip').forEach(strip => {
-      const links = [...strip.querySelectorAll('figure > a[href]')];
-      links.forEach((link, photoIndex) => link.addEventListener('click', event => {
+      const ownLinks = [...strip.querySelectorAll('figure > a[href]')];
+      const links = photoGroups.get(strip.dataset.photoGroup) || ownLinks;
+      ownLinks.forEach(link => link.addEventListener('click', event => {
         event.preventDefault();
         photos = links;
         lastTrigger = link;
         if (!lightbox.open) lightbox.showModal();
         document.documentElement.classList.add('lightbox-open');
-        showPhoto(photoIndex);
+        showPhoto(links.indexOf(link));
         close.focus();
       }));
     });
