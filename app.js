@@ -48,6 +48,10 @@ function createGuideCard(guide) {
   link.className = 'guide-card';
   link.href = guide.href;
   link.style.setProperty('--accent', guide.accent);
+  const coverScale = guide.coverScale || 1;
+  link.style.setProperty('--cover-scale', coverScale);
+  link.style.setProperty('--cover-hover-scale', coverScale * 1.045);
+  link.style.setProperty('--cover-origin', guide.coverOrigin || 'center');
 
   const image = document.createElement('img');
   image.className = 'card-cover';
@@ -65,8 +69,9 @@ function createGuideCard(guide) {
 
   const year = document.createElement('span');
   year.className = 'card-year';
-  year.textContent = '26';
-  year.setAttribute('aria-label', '2026 год');
+  const tripYear = guide.startDate?.slice(0, 4);
+  year.textContent = tripYear ? tripYear.slice(-2) : '—';
+  year.setAttribute('aria-label', tripYear ? `${tripYear} год` : 'Год поездки не указан');
 
   const body = document.createElement('div');
   body.className = 'card-body';
@@ -104,7 +109,8 @@ fetch('guides.json')
     return response.json();
   })
   .then(guides => {
-    guidesGrid.replaceChildren(...guides.map(createGuideCard));
+    const newestFirst = [...guides].sort((a, b) => (b.startDate || '').localeCompare(a.startDate || '') || a.title.localeCompare(b.title, 'ru'));
+    guidesGrid.replaceChildren(...newestFirst.map(createGuideCard));
     const label = pluralizeGuides(guides.length);
     countLabels.forEach(node => { node.textContent = label; });
   })

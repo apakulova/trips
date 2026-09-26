@@ -2,6 +2,7 @@
   {
     "title": "Белград",
     "kind": "Городской путеводитель",
+    "startDate": "2026-10-02",
     "dates": "2–5 октября 2026",
     "description": "Белград, конференция «Дизайн в Финтехе» и отдельный день в Нови-Саде.",
     "href": "belgrade-2026/",
@@ -10,18 +11,22 @@
     "accent": "#e5a16f"
   },
   {
-    "title": "Алтай",
-    "kind": "Путеводитель",
-    "dates": "12–18 августа 2026",
-    "description": "Маршрут по дням, красивые точки, образы и заметки для поездки по Горному Алтаю.",
-    "href": "altai-2026/",
-    "cover": "altai-2026/photos/day14-chuysky-road.jpg",
-    "coverPosition": "center center",
-    "accent": "#d39b32"
+    "title": "Рязань",
+    "kind": "Личный гайд",
+    "startDate": "2026-09-18",
+    "dates": "18–20 сентября 2026",
+    "description": "Маршрут на выходные: кремль, старый город, прогулки, кафе и виды на Оку.",
+    "href": "ryazan_2026/",
+    "cover": "assets/covers/ryazan-brick.webp",
+    "coverPosition": "left 24%",
+    "coverOrigin": "left center",
+    "coverScale": 1.34,
+    "accent": "#a33b2e"
   },
   {
     "title": "Турция",
     "kind": "Памятка для мамы",
+    "startDate": "2026-09-05",
     "dates": "5–13 сентября 2026",
     "description": "Перелёт, документы, ручная кладь, отель и удобный чек-лист перед поездкой.",
     "href": "turkey_2026_mom_guide/",
@@ -30,13 +35,14 @@
     "accent": "#ed2d79"
   },
   {
-    "title": "Рязань",
-    "kind": "Личный гайд",
-    "dates": "Сентябрь 2026",
-    "description": "30 сохранённых мест: кремль, старый город, прогулки, кафе и окрестности Оки.",
-    "href": "ryazan_2026/",
-    "cover": "assets/covers/ryazan.webp",
-    "coverPosition": "center 24%",
-    "accent": "#4f83a8"
+    "title": "Алтай",
+    "kind": "Путеводитель",
+    "startDate": "2026-08-12",
+    "dates": "12–18 августа 2026",
+    "description": "Маршрут по дням, красивые точки, образы и заметки для поездки по Горному Алтаю.",
+    "href": "altai-2026/",
+    "cover": "altai-2026/photos/day14-chuysky-road.jpg",
+    "coverPosition": "center center",
+    "accent": "#d39b32"
   }
 ]
