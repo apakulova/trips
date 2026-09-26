@@ -141,6 +141,8 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .timeline-photo-strip figure{min-width:0;margin:0;overflow:hidden;border:1px solid var(--line);border-radius:15px;background:#f0eee9}
 .timeline-photo-strip img{display:block;width:100%;height:auto}
 .timeline-photo-strip.fortress-photo-strip{max-width:none;grid-template-columns:repeat(4,minmax(0,1fr))}
+.conference-card .timeline-photo-strip.fortress-photo-strip figure>a{aspect-ratio:4/5}
+.conference-card .timeline-photo-strip.fortress-photo-strip img{height:100%;object-fit:cover}
 .timeline-photo-strip.city-photo-strip{max-width:none;grid-template-columns:16fr 16fr 15fr 16fr;align-items:start}
 .timeline-photo-strip.morning-photo-pair,.timeline-photo-strip.skadarlija-photo-strip{max-width:none}
 .timeline-photo-strip figure>a{display:block;cursor:zoom-in}
