@@ -1,4 +1,12 @@
 (function () {
+  // Заголовок каждого пункта таймлайна всегда показываем без точки в конце.
+  document.querySelectorAll('.timeline .timeline-copy > p:first-child > strong:first-child').forEach(heading => {
+    const lastNode = heading.lastChild;
+    if (lastNode?.nodeType === Node.TEXT_NODE) {
+      lastNode.textContent = lastNode.textContent.replace(/\.\s*$/, '');
+    }
+  });
+
   const tabs = [...document.querySelectorAll('[role="tab"]')];
   const panels = {
     route: document.getElementById('route-view'),
