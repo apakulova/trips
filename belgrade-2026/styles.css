@@ -238,6 +238,22 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .airport-walk-map img{display:block;width:100%;height:auto}
 .airport-walk-map figcaption{display:flex;flex-direction:column;gap:9px;padding:17px 24px;font-size:15px}
 .airport-walk-map figcaption a{font-size:14px;font-weight:750;color:var(--plum);text-underline-offset:4px}
+.food-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.food-card{min-width:0;padding:24px 26px;display:flex;flex-direction:column;align-items:start}
+.food-card-featured{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;gap:32px;background:var(--navy);color:#fff}
+.food-card-featured .eyebrow{color:#efb28a}
+.food-card h3{font-size:clamp(21px,2.4vw,29px);line-height:1.18}
+.food-card h3 a{text-decoration:none}
+.food-card h3 a:hover{text-decoration:underline;text-decoration-color:var(--plum);text-underline-offset:5px}
+.food-card-featured h3 a:hover{text-decoration-color:var(--coral)}
+.food-card h3 em{font-size:.68em;font-weight:400;color:var(--muted)}
+.food-card .food-address{margin:8px 0 0;color:var(--plum);font-size:13px;font-weight:800}
+.food-card-featured .food-address{color:#efb28a}
+.food-card>p:not(.eyebrow,.food-address){margin:17px 0 0;color:var(--muted);font-size:15px;line-height:1.65}
+.food-card-featured>p:not(.eyebrow,.food-address){margin:0;color:rgba(255,255,255,.8)}
+.food-card>p strong{color:var(--ink)}
+.food-card-featured>p strong{color:#fff}
+.food-card .food-hours{margin-top:auto!important;padding-top:14px}
 .practical-card{padding:25px;display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:28px}
 .practical-card>div:first-child{display:flex;align-items:center;gap:10px;color:var(--plum)}
 .big-date{font-size:56px;font-weight:850;line-height:1}
@@ -372,6 +388,9 @@ h3{font-size:22px;line-height:1.1;margin:0}
   .airport-guide-content{padding:24px 20px}
   .airport-walk-map figcaption{padding:18px 20px}
   .airport-schedule{padding:18px 20px 24px}
+  .food-grid,.food-card-featured{grid-template-columns:1fr}
+  .food-card{padding:21px 20px}
+  .food-card-featured{gap:15px}
   .practical-card{grid-template-columns:1fr;gap:17px}
   .practical-card>div:first-child{align-items:flex-end}
   .train-options{padding:18px 15px}
