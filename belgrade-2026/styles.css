@@ -283,6 +283,12 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .food-card>p strong{color:var(--ink)}
 .food-card-featured>p strong{color:#fff}
 .food-card .food-hours{margin-top:auto!important;padding-top:14px}
+.food-city-divider{grid-column:1/-1;margin-top:16px;padding-top:22px;border-top:1px solid var(--line)}
+.food-city-divider h3{font-size:24px}
+.food-card-novi{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:28px;background:#f6f0e9}
+.food-card-novi-copy p{margin:0;color:var(--muted);font-size:15px;line-height:1.65}
+.food-card-novi-copy p+p{margin-top:10px}
+.food-card-novi-copy strong{color:var(--ink)}
 .museum-card{padding:25px 27px}
 .museum-card h3 em{font-size:.7em;font-weight:400;color:var(--muted)}
 .museum-card>p{max-width:85ch;margin:13px 0 0;color:var(--muted);font-size:15px;line-height:1.65}
@@ -449,9 +455,10 @@ h3{font-size:22px;line-height:1.1;margin:0}
   .airport-guide-content{padding:24px 20px}
   .airport-walk-map figcaption{padding:18px 20px}
   .airport-schedule{padding:18px 20px 24px}
-  .food-grid,.food-card-featured{grid-template-columns:1fr}
+  .food-grid,.food-card-featured,.food-card-novi{grid-template-columns:1fr}
   .food-card{padding:21px 20px}
   .food-card-featured{gap:15px}
+  .food-card-novi{gap:14px}
   .taste-grid,.taste-card-featured{grid-template-columns:1fr}
   .taste-card{padding:21px 20px}
   .taste-card-featured{gap:15px}
