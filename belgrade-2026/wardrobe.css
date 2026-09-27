@@ -60,9 +60,10 @@
 .wardrobe .day h3{margin:0;font-size:19px;line-height:1.25}
 .wardrobe .day ul{margin:0;padding:0 22px;list-style:none}
 .wardrobe .day li+li{border-top:1px solid var(--line)}
-.wardrobe .day li a{display:block;padding:15px 0;color:var(--ink);font-size:14px;text-decoration:none}
+.wardrobe .day li a{position:relative;display:block;min-height:88px;padding:15px 72px 15px 0;color:var(--ink);font-size:14px;text-decoration:none}
 .wardrobe .day li a:hover .option-title{color:var(--plum)}
-.wardrobe .day li a>span:last-child{display:block;color:var(--muted)}
+.wardrobe .day li a>span:nth-child(2){display:block;color:var(--muted)}
+.wardrobe .day .look-thumb{position:absolute;right:0;top:50%;width:56px;height:68px;padding:3px;transform:translateY(-50%);border:1px solid var(--line);border-radius:9px;background:#f1eee7;object-fit:contain}
 .wardrobe .option-title{display:flex;justify-content:space-between;gap:12px;margin-bottom:4px;font-weight:800}
 .wardrobe .ref{color:var(--plum);font-size:12px;font-weight:700;white-space:nowrap}
 .wardrobe .layers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:26px}

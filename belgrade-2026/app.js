@@ -112,7 +112,7 @@
     });
   };
   useCutouts('.item .art img', image => itemCutouts[image.closest('.art').getAttribute('aria-label')]);
-  useCutouts('.look-card .art img', image => image.closest('.look-card').id);
+  useCutouts('.look-card .art img', image => image.closest('.look-card').dataset.cutout);
   window.addEventListener('hashchange', () => setView(viewForHash(), {scroll: true}));
   setView(viewForHash());
 
