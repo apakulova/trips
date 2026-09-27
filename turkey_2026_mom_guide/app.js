@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
+  (async () => {
   const app = document.getElementById('app');
   const [contentA, schedule, contentB, spaContent] = await Promise.all(
     ['content-a.html', 'schedule.html', 'content-b.html', 'spa.html'].map(async file => {
@@ -127,65 +128,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   `;
   document.head.appendChild(tocStyle);
 
-  const ignoredTypographyTags = new Set(['SCRIPT', 'STYLE', 'CODE', 'PRE', 'TEXTAREA']);
-
-  function typographValue(source) {
-    let value = source;
-
-    // Тире связываем с предыдущим словом, чтобы оно не начинало новую строку.
-    value = value.replace(/[ \t\u00a0]+[–—-][ \t\u00a0]+/g, '\u00a0— ');
-
-    // Числа не отрываем от единиц измерения, процентов и названий месяцев.
-    value = value.replace(
-      /(\d(?:[\d.,]*\d)?)[ \t]+(?=(?:кг|г|мл|л|км|м|см|мм|ч|мин|сек|%|°C|руб\.?|января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)(?!\p{L}))/giu,
-      '$1\u00a0'
-    );
-    value = value.replace(/№[ \t]+(?=\d)/g, '№\u00a0');
-
-    // Короткие слова связываем со следующим словом или знаком неразрывным пробелом.
-    const shortWord = /(^|[^\p{L}\p{N}])(?<!\d\u00a0)([\p{L}]{1,3})[ \t]+(?=\S|$)/gu;
-    let previousValue;
-    do {
-      previousValue = value;
-      value = value.replace(shortWord, '$1$2\u00a0');
-    } while (value !== previousValue);
-
-    return value;
-  }
-
-  function typographNode(node) {
-    if (
-      node.nodeType !== Node.TEXT_NODE ||
-      !node.nodeValue?.trim() ||
-      ignoredTypographyTags.has(node.parentElement?.tagName)
-    ) return;
-
-    const value = typographValue(node.nodeValue);
-    if (value !== node.nodeValue) node.nodeValue = value;
-  }
-
-  function typographText(root) {
-    if (root.nodeType === Node.TEXT_NODE) {
-      typographNode(root);
-      return;
-    }
-
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-    const nodes = [];
-    while (walker.nextNode()) nodes.push(walker.currentNode);
-    nodes.forEach(typographNode);
-  }
-
-  typographText(app);
-
-  const typographyObserver = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-      if (mutation.type === 'characterData') typographNode(mutation.target);
-      mutation.addedNodes.forEach(typographText);
-    });
-  });
-  typographyObserver.observe(app, { childList: true, characterData: true, subtree: true });
-
   const boxes = [...document.querySelectorAll('input[type="checkbox"][data-key]')];
   const bar = document.getElementById('progressBar');
   const label = document.getElementById('progressLabel');
@@ -217,7 +159,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   update();
-}).catch(error => {
+  })().catch(error => {
   document.getElementById('app').innerHTML = '<main style="padding:24px;font-family:system-ui">Не удалось загрузить памятку. Обнови страницу.</main>';
   console.error(error);
+  });
 });
