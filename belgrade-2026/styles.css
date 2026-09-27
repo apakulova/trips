@@ -135,9 +135,10 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .timeline-copy{min-width:0}
 .timeline-copy>p{max-width:85ch;margin:0;color:var(--muted);font-size:16px;line-height:1.6}
 .timeline-copy>*+*{margin-top:12px}
-.timeline-copy>p+p{margin-top:16px}
+.timeline-copy>p:not(:first-child){margin-top:16px}
 .timeline-copy>p:first-child>strong:first-child{display:block;margin-bottom:6px;color:var(--ink);font-size:18px;line-height:1.35}
-.timeline-copy strong{color:var(--ink)}
+.timeline-copy strong,.timeline-copy b{color:var(--ink)}
+.timeline-copy strong em{color:var(--muted);font-weight:400}
 .timeline-copy .place-name{color:var(--ink)}
 .timeline-copy .place-name em{color:var(--muted)}
 .timeline-copy>p a{color:var(--plum);text-underline-offset:3px}
