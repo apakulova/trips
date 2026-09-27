@@ -499,7 +499,7 @@ h3{font-size:22px;line-height:1.1;margin:0}
   .train-table tbody td:nth-child(2)::before{content:"Прибытие"}
   .train-table tbody td:nth-child(3)::before{content:"Поезд"}
   .train-table tbody td:nth-child(4)::before{content:"В пути"}
-  .train-table tbody td:nth-child(5)::before{content:"≈ цена"}
+  .train-table tbody td:nth-child(5)::before{content:"~ цена"}
   .train-pick{margin-left:4px}
   .train-help-card{padding:20px}
   .novi-branch-card{padding:21px 20px}
