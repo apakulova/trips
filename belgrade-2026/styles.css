@@ -207,7 +207,7 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .day-info-grid.two{grid-template-columns:repeat(2,1fr)}
 .info-block{background:#f0eee9;border:1px solid var(--line);padding:20px;border-radius:17px}
 .info-block p{margin:9px 0 0;color:var(--muted);font-size:14px}
-.outfit-block{grid-column:1/-1;background:#e9e5dd}
+.outfit-block{grid-column:1/-1}
 .novi-outfit{grid-column:auto}
 .palette{display:flex;gap:7px;margin-top:14px}
 .palette i{width:31px;height:31px;border-radius:50%;background:var(--c);border:3px solid rgba(255,255,255,.72);box-shadow:0 0 0 1px rgba(0,0,0,.08)}
