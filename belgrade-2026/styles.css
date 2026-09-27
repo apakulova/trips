@@ -196,6 +196,7 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .info-block{background:#f0eee9;border:1px solid var(--line);padding:20px;border-radius:17px}
 .info-block p{margin:9px 0 0;color:var(--muted);font-size:14px}
 .outfit-block{grid-column:1/-1;background:#e9e5dd}
+.novi-outfit{grid-column:auto}
 .palette{display:flex;gap:7px;margin-top:14px}
 .palette i{width:31px;height:31px;border-radius:50%;background:var(--c);border:3px solid rgba(255,255,255,.72);box-shadow:0 0 0 1px rgba(0,0,0,.08)}
 .conference-card{overflow:hidden}
@@ -283,6 +284,10 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .food-card>p strong{color:var(--ink)}
 .food-card-featured>p strong{color:#fff}
 .food-card .food-hours{margin-top:auto!important;padding-top:14px}
+.museum-card{padding:25px 27px}
+.museum-card h3 em{font-size:.7em;font-weight:400;color:var(--muted)}
+.museum-card>p{max-width:85ch;margin:13px 0 0;color:var(--muted);font-size:15px;line-height:1.65}
+.museum-card .timeline-links{margin-top:18px}
 .taste-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .taste-card{min-width:0;padding:24px 26px}
 .taste-card h3{font-size:clamp(21px,2.4vw,29px);line-height:1.18}
