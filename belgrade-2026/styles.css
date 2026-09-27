@@ -230,12 +230,12 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .flight-route i{font-style:normal;color:var(--muted);font-size:12px;position:relative;text-align:center}
 .flight-route i::after{content:"";display:block;width:80px;max-width:100%;margin-top:5px;border-top:1px dashed #aaa7aa}
 .flight-card>p:last-child{margin:0;color:var(--muted);font-size:14px}
-.stay-card{grid-column:1/-1;padding:28px;display:grid;grid-template-columns:1fr auto;gap:10px 30px;align-items:center;background:linear-gradient(120deg,#f8f1e8,#f6f3ed)}
+.stay-card{grid-column:1/-1;padding:28px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 30px;align-items:center;background:linear-gradient(120deg,#f8f1e8,#f6f3ed)}
 .stay-card h3{font-family:Georgia,"Times New Roman",serif;font-size:39px}
 .stay-card>p{margin:0;color:var(--muted)}
 .stay-card>div{grid-row:1/4;grid-column:2;display:flex;flex-direction:column;gap:9px}
 .stay-card>a{font-size:13px;font-weight:800;text-underline-offset:4px}
-.stay-card>.stay-checkout-note{font-size:13px;line-height:1.55}
+.stay-card>.stay-checkout-note{grid-column:1/-1;font-size:13px;line-height:1.55}
 .stay-checkout-note a{color:var(--plum);font-weight:750;text-underline-offset:3px}
 .stay-dining{grid-column:1/-1;margin-top:12px;padding:18px 20px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.56)}
 .stay-dining>strong{display:block;margin-bottom:7px;color:var(--ink);font-size:16px}
