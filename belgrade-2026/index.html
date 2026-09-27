@@ -49,32 +49,40 @@
   </div>
 
   <nav class="sticky-nav" aria-label="Навигация по странице">
-    <div class="wrap nav-scroll" id="route-nav">
-      <a href="#summary">В одном экране</a>
-      <a href="#weather">Погода</a>
-      <a href="#d02">2 окт</a>
-      <a href="#d03">3 окт · Конференция</a>
-      <a href="#d04">4 окт · Нови-Сад</a>
-      <a href="#d05">5 окт</a>
-      <a href="#packing">Что взять</a>
-    </div>
-    <div class="wrap nav-scroll" id="practice-nav" hidden>
-      <a href="#bookings">Бронирования</a>
-      <a href="#airport">Аэропорт</a>
-      <a href="#first-day-option">2 окт · резерв</a>
-      <a href="#food-nearby">Где поесть</a>
-      <a href="#conference">Конференция</a>
-      <a href="#train">Поезд</a>
-      <a href="#novi-sad-options">После Нови-Сада</a>
-      <a href="#checks">Проверить</a>
-      <a href="#sources">Источники</a>
-    </div>
-    <div class="wrap nav-scroll" id="clothing-nav" hidden>
-      <a href="#clothing-intro">Капсула Анны</a>
-      <a href="#capsule">Вещи</a>
-      <a href="#palette">Палитра</a>
-      <a href="#looks">12 образов</a>
-      <a href="#days">По дням</a>
+    <div class="wrap sticky-nav-content">
+      <div class="sticky-view-switch" role="group" aria-label="Вкладки путеводителя">
+        <button type="button" data-view-target="route" aria-pressed="true">Маршрут</button>
+        <button type="button" data-view-target="practice" aria-pressed="false"><span class="sticky-tab-full">Детали и памятки</span><span class="sticky-tab-short">Детали</span></button>
+        <button type="button" data-view-target="clothing" aria-pressed="false">Одежда</button>
+      </div>
+      <div class="sticky-nav-divider" aria-hidden="true"></div>
+      <div class="nav-scroll" id="route-nav">
+        <a href="#summary">В одном экране</a>
+        <a href="#weather">Погода</a>
+        <a href="#d02">2 окт</a>
+        <a href="#d03">3 окт · Конференция</a>
+        <a href="#d04">4 окт · Нови-Сад</a>
+        <a href="#d05">5 окт</a>
+        <a href="#packing">Что взять</a>
+      </div>
+      <div class="nav-scroll" id="practice-nav" hidden>
+        <a href="#bookings">Бронирования</a>
+        <a href="#airport">Аэропорт</a>
+        <a href="#first-day-option">2 окт · резерв</a>
+        <a href="#food-nearby">Где поесть</a>
+        <a href="#conference">Конференция</a>
+        <a href="#train">Поезд</a>
+        <a href="#novi-sad-options">После Нови-Сада</a>
+        <a href="#checks">Проверить</a>
+        <a href="#sources">Источники</a>
+      </div>
+      <div class="nav-scroll" id="clothing-nav" hidden>
+        <a href="#clothing-intro">Капсула Анны</a>
+        <a href="#capsule">Вещи</a>
+        <a href="#palette">Палитра</a>
+        <a href="#looks">12 образов</a>
+        <a href="#days">По дням</a>
+      </div>
     </div>
   </nav>
 

@@ -8,6 +8,7 @@
   });
 
   const tabs = [...document.querySelectorAll('[role="tab"]')];
+  const stickyTabs = [...document.querySelectorAll('.sticky-view-switch [data-view-target]')];
   const panels = {
     route: document.getElementById('route-view'),
     practice: document.getElementById('practice-view'),
@@ -46,6 +47,11 @@
       tab.setAttribute('aria-selected', String(active));
       tab.tabIndex = active ? 0 : -1;
     });
+    stickyTabs.forEach(tab => {
+      const active = tab.dataset.viewTarget === next;
+      tab.classList.toggle('active', active);
+      tab.setAttribute('aria-pressed', String(active));
+    });
     if (options.updateHash) history.replaceState(null, '', {route: '#summary', practice: '#bookings', clothing: '#clothing-intro'}[next]);
     if (options.scroll) scrollToHash(options.instant ? 'auto' : 'smooth');
   }
@@ -60,6 +66,10 @@
       next.focus();
       setView(next.dataset.view, {updateHash: true});
     });
+  });
+
+  stickyTabs.forEach(tab => {
+    tab.addEventListener('click', () => setView(tab.dataset.viewTarget, {updateHash: true, scroll: true}));
   });
 
   navs.practice.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setView('practice')));
