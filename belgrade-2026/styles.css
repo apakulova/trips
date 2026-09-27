@@ -164,7 +164,7 @@ h3{font-size:22px;line-height:1.1;margin:0}
 .timeline-photo-strip.city-photo-strip{max-width:none;grid-template-columns:16fr 16fr 15fr 16fr;align-items:start}
 .timeline-photo-strip.novi-fortress-photo-strip{max-width:none;grid-template-columns:0.8fr 0.617fr 1.333fr;align-items:start}
 .timeline-photo-strip.novi-crossing-photo-strip{max-width:none;grid-template-columns:1.333fr 0.663fr 0.663fr;align-items:start}
-.timeline-photo-strip.novi-center-photo-strip{max-width:none;grid-template-columns:1.333fr 1.333fr 1.326fr 0.811fr;align-items:start}
+.timeline-photo-strip.novi-center-photo-strip{max-width:none;grid-template-columns:1.333fr 1.326fr 0.811fr;align-items:start}
 .timeline-photo-strip.novi-square-photo-strip{max-width:none;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
 .timeline-photo-strip.novi-hm-photo-strip{max-width:none;grid-template-columns:0.75fr 0.662fr;align-items:start}
 .timeline-photo-strip.morning-photo-pair,.timeline-photo-strip.skadarlija-photo-strip{max-width:none}
