@@ -9,6 +9,14 @@
 
   const tabs = [...document.querySelectorAll('[role="tab"]')];
   const stickyTabs = [...document.querySelectorAll('.sticky-view-switch [data-view-target]')];
+  const viewTabsBar = document.querySelector('.view-tabs-bar');
+  const stickyNav = document.querySelector('.sticky-nav');
+  function syncStickyNav() {
+    stickyNav.classList.toggle('is-stuck', viewTabsBar.getBoundingClientRect().bottom <= 18);
+  }
+  window.addEventListener('scroll', syncStickyNav, {passive: true});
+  window.addEventListener('resize', syncStickyNav);
+  syncStickyNav();
   const panels = {
     route: document.getElementById('route-view'),
     practice: document.getElementById('practice-view'),
