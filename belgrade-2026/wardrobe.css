@@ -20,6 +20,8 @@
 .wardrobe .art{position:relative;flex:none;overflow:hidden;aspect-ratio:var(--ratio)}
 .wardrobe .art img{position:absolute;display:block;height:auto;max-width:none;max-height:none;pointer-events:none}
 .wardrobe .item-picture .art{width:min(100%,calc(var(--picture-height)*var(--ar)));height:auto;mix-blend-mode:multiply}
+.wardrobe .item-picture .art.cutout,.wardrobe .look-visual .art.cutout{width:100%;height:100%;aspect-ratio:auto;overflow:visible;mix-blend-mode:normal}
+.wardrobe .art.cutout img{position:static;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}
 .wardrobe .item-copy{display:flex;flex:1;flex-direction:column;padding:17px 18px 20px}
 .wardrobe .meta{margin:0 0 6px;color:var(--plum);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
 .wardrobe .item h3{margin:0 0 7px;font-size:18px;line-height:1.25}
@@ -97,6 +99,7 @@
   .wardrobe .look-card{display:grid;grid-template-columns:42% minmax(0,1fr)}
   .wardrobe .look-visual{--picture-height:280px;height:auto;min-height:305px;padding:10px 4px}
   .wardrobe .look-visual .art{width:min(100%,calc(var(--picture-height)*var(--ar)))}
+  .wardrobe .look-visual .art.cutout{width:100%}
   .wardrobe .look-copy{padding:16px 13px}
   .wardrobe .look-copy h3{font-size:21px}
   .wardrobe .combination{font-size:13px}
@@ -109,6 +112,7 @@
   .wardrobe .look-card{display:block}
   .wardrobe .look-visual{height:320px;min-height:0}
   .wardrobe .look-visual .art{width:min(100%,calc(300px*var(--ar)))}
+  .wardrobe .look-visual .art.cutout{width:100%}
 }
 @media print{
   .wardrobe .items{grid-template-columns:repeat(4,minmax(0,1fr))}

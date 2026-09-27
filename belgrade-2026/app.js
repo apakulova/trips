@@ -83,9 +83,36 @@
   navs.practice.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setView('practice')));
   navs.route.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setView('route')));
   navs.clothing.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setView('clothing')));
-  panels.clothing.querySelectorAll('img[data-sheet]').forEach(image => {
-    image.src = `assets/wardrobe-${image.dataset.sheet}.png`;
-  });
+  const itemCutouts = {
+    'Вишнёвая рубашка': 'item-01-cherry-shirt',
+    'Рубашка хаки': 'item-02-khaki-shirt',
+    'Синий свитшот': 'item-03-blue-sweatshirt',
+    'Молочная футболка': 'item-04-ivory-tee',
+    'Тельняшка': 'item-05-striped-top',
+    'Коричневая рубашка': 'item-06-brown-shirt',
+    'Топ какао': 'item-07-cocoa-top',
+    'Шоколадные брюки': 'item-08-brown-pants',
+    'Шоколадная юбка': 'item-09-brown-skirt',
+    'Чёрное платье': 'item-10-black-dress',
+    'Бордовая ветровка': 'item-11-burgundy-jacket',
+    'Джинсовая куртка': 'item-12-denim-jacket',
+    'Кроссовки': 'item-13-black-sneakers',
+    'Сумка тауп': 'item-14-taupe-bag'
+  };
+  const useCutouts = (selector, getName) => {
+    panels.clothing.querySelectorAll(selector).forEach(image => {
+      const name = getName(image);
+      if (!name) return;
+      image.src = `assets/wardrobe-cutouts/${name}.png`;
+      image.removeAttribute('data-sheet');
+      image.removeAttribute('style');
+      const art = image.closest('.art');
+      art.removeAttribute('style');
+      art.classList.add('cutout');
+    });
+  };
+  useCutouts('.item .art img', image => itemCutouts[image.closest('.art').getAttribute('aria-label')]);
+  useCutouts('.look-card .art img', image => image.closest('.look-card').id);
   window.addEventListener('hashchange', () => setView(viewForHash(), {scroll: true}));
   setView(viewForHash());
 
