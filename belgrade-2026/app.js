@@ -87,7 +87,7 @@
     'Вишнёвая рубашка': 'item-01-cherry-shirt',
     'Рубашка хаки': 'item-02-khaki-shirt',
     'Синий свитшот': 'item-03-blue-sweatshirt',
-    'Молочная футболка': 'item-04-ivory-tee',
+    'Коричневая футболка MUTED': 'item-04-muted-brown-tee',
     'Тельняшка': 'item-05-striped-top',
     'Коричневая рубашка': 'item-06-brown-shirt',
     'Топ какао': 'item-07-cocoa-top',
